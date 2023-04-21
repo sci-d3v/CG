@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/CG_P2.dir/main.c.o -o CG_P2  -lm -lglfw -lGLEW -lGL -lSOIL 
