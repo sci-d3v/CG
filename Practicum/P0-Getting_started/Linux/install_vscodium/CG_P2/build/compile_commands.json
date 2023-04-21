@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/user/cpp/lab2/CG_P2/build",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/CG_P2.dir/main.c.o -c /home/user/cpp/lab2/CG_P2/main.c",
+  "file": "/home/user/cpp/lab2/CG_P2/main.c"
+}
+]

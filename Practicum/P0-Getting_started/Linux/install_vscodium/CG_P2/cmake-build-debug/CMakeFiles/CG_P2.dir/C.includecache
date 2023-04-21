@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/d/CLionProjects/CG_P2/main.c
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+stdio.h
+-
+math.h
+-
+stddef.h
+-
+stdlib.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+unistd.h
+-
+
