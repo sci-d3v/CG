@@ -1,4 +1,0 @@
-/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=icx -G "CodeBlocks - Unix Makefiles" /home/d/CLionProjects/CG_P2
--- Configuring done
--- Generating done
--- Build files have been written to: /home/d/CLionProjects/CG_P2/cmake-build-debug
