@@ -1,0 +1,88 @@
+Компьютерная графика
+
+1) рекомендуемая версия OpenGL => 4.3
+проверяется следующими командами
+glxinfo | grep NVIDIA
+glxinfo | grep -i opengl
+
+Примечание:
+более новая версия ставится при установке драйверов
+
+
+2) GLFW => 3.0
+libglfw3 libglfw3-dev libglfw3-doc
+
+Примечание:
+можешь поставить, например, через синаптик следующие библиотеки или с помощью команды
+sudo apt install [список библиотек]
+
+
+3) GLM
+libglm-dev libglm-doc
+
+4) GLEW
+glew-utils
+
+5) GLUT
+freeglut3 freeglut3-dev freeglut3-dbg
+
+6) GLU
+libglu1-mesa libglu1-mesa-dev
+
+
+Проверка того, как все поставилось и работоает
+компилируешь исходники 1.с и 2.с (см. первую строку в каждом файле)
+на всякий случай, если что-то не скомпилируется пишу список зависимостей
+ldd ./1
+	linux-vdso.so.1 =>  (0x00007ffd077a2000)
+	libglut.so.3 => /usr/lib/x86_64-linux-gnu/libglut.so.3 (0x00007f38d5127000)
+	libGLU.so.1 => /usr/lib/x86_64-linux-gnu/libGLU.so.1 (0x00007f38d4eb8000)
+	libGL.so.1 => /usr/lib/nvidia-384/libGL.so.1 (0x00007f38d4b76000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f38d47ac000)
+	libX11.so.6 => /usr/lib/x86_64-linux-gnu/libX11.so.6 (0x00007f38d4472000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f38d4169000)
+	libXi.so.6 => /usr/lib/x86_64-linux-gnu/libXi.so.6 (0x00007f38d3f59000)
+	libXxf86vm.so.1 => /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1 (0x00007f38d3d53000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f38d39d1000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f38d37bb000)
+	libnvidia-tls.so.384.130 => /usr/lib/nvidia-384/tls/libnvidia-tls.so.384.130 (0x00007f38d35b7000)
+	libnvidia-glcore.so.384.130 => /usr/lib/nvidia-384/libnvidia-glcore.so.384.130 (0x00007f38d16fb000)
+	libXext.so.6 => /usr/lib/x86_64-linux-gnu/libXext.so.6 (0x00007f38d14e9000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f38d12e5000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f38d536f000)
+	libxcb.so.1 => /usr/lib/x86_64-linux-gnu/libxcb.so.1 (0x00007f38d10c3000)
+	libXau.so.6 => /usr/lib/x86_64-linux-gnu/libXau.so.6 (0x00007f38d0ebf000)
+	libXdmcp.so.6 => /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007f38d0cb9000)
+
+ldd ./2
+	linux-vdso.so.1 =>  (0x00007ffec270f000)
+	libglfw.so.3 => /usr/lib/x86_64-linux-gnu/libglfw.so.3 (0x00007f404dada000)
+	libGL.so.1 => /usr/lib/nvidia-384/libGL.so.1 (0x00007f404d798000)
+	libGLEW.so.1.13 => /usr/lib/x86_64-linux-gnu/libGLEW.so.1.13 (0x00007f404d515000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f404d14b000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f404cf43000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f404cc3a000)
+	libX11.so.6 => /usr/lib/x86_64-linux-gnu/libX11.so.6 (0x00007f404c900000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f404c6e3000)
+	libXrandr.so.2 => /usr/lib/x86_64-linux-gnu/libXrandr.so.2 (0x00007f404c4d8000)
+	libXinerama.so.1 => /usr/lib/x86_64-linux-gnu/libXinerama.so.1 (0x00007f404c2d5000)
+	libXi.so.6 => /usr/lib/x86_64-linux-gnu/libXi.so.6 (0x00007f404c0c5000)
+	libXxf86vm.so.1 => /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1 (0x00007f404bebf000)
+	libXcursor.so.1 => /usr/lib/x86_64-linux-gnu/libXcursor.so.1 (0x00007f404bcb5000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f404bab1000)
+	libnvidia-tls.so.384.130 => /usr/lib/nvidia-384/tls/libnvidia-tls.so.384.130 (0x00007f404b8ad000)
+	libnvidia-glcore.so.384.130 => /usr/lib/nvidia-384/libnvidia-glcore.so.384.130 (0x00007f40499f1000)
+	libXext.so.6 => /usr/lib/x86_64-linux-gnu/libXext.so.6 (0x00007f40497df000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f404dcf0000)
+	libxcb.so.1 => /usr/lib/x86_64-linux-gnu/libxcb.so.1 (0x00007f40495bd000)
+	libXrender.so.1 => /usr/lib/x86_64-linux-gnu/libXrender.so.1 (0x00007f40493b3000)
+	libXfixes.so.3 => /usr/lib/x86_64-linux-gnu/libXfixes.so.3 (0x00007f40491ad000)
+	libXau.so.6 => /usr/lib/x86_64-linux-gnu/libXau.so.6 (0x00007f4048fa9000)
+	libXdmcp.so.6 => /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007f4048da3000)
+
+Примечание:
+версию ядра Ubuntu можно определить так
+uname -v
+полная информация
+uname -a
+

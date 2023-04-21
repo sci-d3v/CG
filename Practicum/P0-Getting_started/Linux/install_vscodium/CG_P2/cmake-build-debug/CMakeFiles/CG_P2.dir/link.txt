@@ -1,0 +1,1 @@
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx -g   CMakeFiles/CG_P2.dir/main.c.o  -o CG_P2 -lm -lglfw -lGLEW -lGL 

@@ -1,0 +1,1027 @@
+The system is: Linux - 4.19.0-13-amd64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9a5ca/fast 
+/usr/bin/make -f CMakeFiles/cmTC_9a5ca.dir/build.make CMakeFiles/cmTC_9a5ca.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a5ca.dir/testCCompiler.c.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx    -o CMakeFiles/cmTC_9a5ca.dir/testCCompiler.c.o   -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_9a5ca
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a5ca.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx      CMakeFiles/cmTC_9a5ca.dir/testCCompiler.c.o  -o cmTC_9a5ca 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2fb2e/fast 
+/usr/bin/make -f CMakeFiles/cmTC_2fb2e.dir/build.make CMakeFiles/cmTC_2fb2e.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx   -v -o CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o   -c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -fveclib=SVML -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0 -I/opt/intel/oneapi/mkl//include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/dev-utilities/2021.1.1/include -I/opt/intel/oneapi/dal/2021.1.1/include -I/opt/intel/oneapi/ippcp/2021.1.1/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp -I/opt/intel/oneapi/ipp/2021.1.1/include -I/opt/intel/oneapi/tbb/2021.1.1/env/../include -I/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -I/opt/intel/oneapi/dpcpp-ct/2021.1.1/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/vpl/2021.1.1/include -I/opt/intel/oneapi/dpl/2021.1.2/linux/include -I/opt/intel/oneapi/mpi/2021.1.1//include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include -internal-isystem /usr/local/include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdebug-compilation-dir /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -disable-cpudispatch-ifuncs -fheinous-gnu-extensions -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -fintel-compatibility -mllvm -disable-hir-generate-mkl-call -mllvm -intel-libirc-allowed -mllvm -loopopt=0 -mllvm -enable-lv -o CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o -x c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+clang -cc1 version 12.0.0 based upon LLVM 12.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/opt/intel/oneapi/mkl//include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"
+ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"
+ignoring duplicate directory "/opt/intel/oneapi/mkl/latest/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/intel/oneapi/compiler/2021.1.2/linux/include
+ /opt/intel/oneapi/mkl/latest/include
+ /opt/intel/oneapi/dev-utilities/2021.1.1/include
+ /opt/intel/oneapi/dal/2021.1.1/include
+ /opt/intel/oneapi/ippcp/2021.1.1/include
+ /opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp
+ /opt/intel/oneapi/ipp/2021.1.1/include
+ /opt/intel/oneapi/tbb/2021.1.1/env/../include
+ /opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib
+ /opt/intel/oneapi/dpcpp-ct/2021.1.1/include
+ /opt/intel/oneapi/vpl/2021.1.1/include
+ /opt/intel/oneapi/dpl/2021.1.2/linux/include
+ /opt/intel/oneapi/mpi/2021.1.1//include
+ /opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include
+ /usr/local/include
+ /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+Linking C executable cmTC_2fb2e
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fb2e.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx     -v CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o  -o cmTC_2fb2e 
+Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2fb2e /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/x86_64-linux-gnu/../../lib64 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/lib -L/usr/lib -L/opt/intel/oneapi/mkl//lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/dal/2021.1.1/lib/intel64 -L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp -L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/vpl/2021.1.1/lib -L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib -L/opt/intel/oneapi/mpi/2021.1.1//lib/release -L/opt/intel/oneapi/mpi/2021.1.1//lib CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o -Bstatic -lsvml -Bdynamic -Bstatic -lirng -Bdynamic -limf -lm -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc -Bdynamic -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc_s -Bdynamic /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/intel/oneapi/compiler/2021.1.2/linux/include]
+    add: [/opt/intel/oneapi/mkl/latest/include]
+    add: [/opt/intel/oneapi/dev-utilities/2021.1.1/include]
+    add: [/opt/intel/oneapi/dal/2021.1.1/include]
+    add: [/opt/intel/oneapi/ippcp/2021.1.1/include]
+    add: [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+    add: [/opt/intel/oneapi/ipp/2021.1.1/include]
+    add: [/opt/intel/oneapi/tbb/2021.1.1/env/../include]
+    add: [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+    add: [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+    add: [/opt/intel/oneapi/vpl/2021.1.1/include]
+    add: [/opt/intel/oneapi/dpl/2021.1.2/linux/include]
+    add: [/opt/intel/oneapi/mpi/2021.1.1//include]
+    add: [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include]
+    add: [/usr/local/include]
+    add: [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/opt/intel/oneapi/compiler/2021.1.2/linux/include] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/include]
+  collapse include dir [/opt/intel/oneapi/mkl/latest/include] ==> [/opt/intel/oneapi/mkl/latest/include]
+  collapse include dir [/opt/intel/oneapi/dev-utilities/2021.1.1/include] ==> [/opt/intel/oneapi/dev-utilities/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dal/2021.1.1/include] ==> [/opt/intel/oneapi/dal/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/ippcp/2021.1.1/include] ==> [/opt/intel/oneapi/ippcp/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp] ==> [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+  collapse include dir [/opt/intel/oneapi/ipp/2021.1.1/include] ==> [/opt/intel/oneapi/ipp/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/tbb/2021.1.1/env/../include] ==> [/opt/intel/oneapi/tbb/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  collapse include dir [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include] ==> [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/vpl/2021.1.1/include] ==> [/opt/intel/oneapi/vpl/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dpl/2021.1.2/linux/include] ==> [/opt/intel/oneapi/dpl/2021.1.2/linux/include]
+  collapse include dir [/opt/intel/oneapi/mpi/2021.1.1//include] ==> [/opt/intel/oneapi/mpi/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/opt/intel/oneapi/compiler/2021.1.2/linux/include;/opt/intel/oneapi/mkl/latest/include;/opt/intel/oneapi/dev-utilities/2021.1.1/include;/opt/intel/oneapi/dal/2021.1.1/include;/opt/intel/oneapi/ippcp/2021.1.1/include;/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp;/opt/intel/oneapi/ipp/2021.1.1/include;/opt/intel/oneapi/tbb/2021.1.1/include;/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib;/opt/intel/oneapi/dpcpp-ct/2021.1.1/include;/opt/intel/oneapi/vpl/2021.1.1/include;/opt/intel/oneapi/dpl/2021.1.2/linux/include;/opt/intel/oneapi/mpi/2021.1.1/include;/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/include;/usr/local/include;/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_2fb2e/fast ]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2fb2e.dir/build.make CMakeFiles/cmTC_2fb2e.dir/build]
+  ignore line: [make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx   -v -o CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o   -c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ (in-process)]
+  ignore line: [ "/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -fveclib=SVML -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0 -I/opt/intel/oneapi/mkl//include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/dev-utilities/2021.1.1/include -I/opt/intel/oneapi/dal/2021.1.1/include -I/opt/intel/oneapi/ippcp/2021.1.1/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp -I/opt/intel/oneapi/ipp/2021.1.1/include -I/opt/intel/oneapi/tbb/2021.1.1/env/../include -I/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -I/opt/intel/oneapi/dpcpp-ct/2021.1.1/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/vpl/2021.1.1/include -I/opt/intel/oneapi/dpl/2021.1.2/linux/include -I/opt/intel/oneapi/mpi/2021.1.1//include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include -internal-isystem /usr/local/include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdebug-compilation-dir /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -disable-cpudispatch-ifuncs -fheinous-gnu-extensions -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -fintel-compatibility -mllvm -disable-hir-generate-mkl-call -mllvm -intel-libirc-allowed -mllvm -loopopt=0 -mllvm -enable-lv -o CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o -x c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 12.0.0 based upon LLVM 12.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/opt/intel/oneapi/mkl//include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/mkl/latest/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/intel/oneapi/compiler/2021.1.2/linux/include]
+  ignore line: [ /opt/intel/oneapi/mkl/latest/include]
+  ignore line: [ /opt/intel/oneapi/dev-utilities/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/dal/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/ippcp/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+  ignore line: [ /opt/intel/oneapi/ipp/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/tbb/2021.1.1/env/../include]
+  ignore line: [ /opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  ignore line: [ /opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/vpl/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/dpl/2021.1.2/linux/include]
+  ignore line: [ /opt/intel/oneapi/mpi/2021.1.1//include]
+  ignore line: [ /opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_2fb2e]
+  ignore line: [/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fb2e.dir/link.txt --verbose=1]
+  ignore line: [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx     -v CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o  -o cmTC_2fb2e ]
+  ignore line: [Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/usr/bin/ld" --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2fb2e /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/x86_64-linux-gnu/../../lib64 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/lib -L/usr/lib -L/opt/intel/oneapi/mkl//lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/dal/2021.1.1/lib/intel64 -L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp -L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/vpl/2021.1.1/lib -L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib -L/opt/intel/oneapi/mpi/2021.1.1//lib/release -L/opt/intel/oneapi/mpi/2021.1.1//lib CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o -Bstatic -lsvml -Bdynamic -Bstatic -lirng -Bdynamic -limf -lm -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc -Bdynamic -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc_s -Bdynamic /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_2fb2e] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o] ==> ignore
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu/../../lib64] ==> dir [/usr/lib/x86_64-linux-gnu/../../lib64]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [-L/opt/intel/oneapi/mkl//lib/intel64] ==> dir [/opt/intel/oneapi/mkl//lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/mkl/latest/lib/intel64] ==> dir [/opt/intel/oneapi/mkl/latest/lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/dal/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/dal/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp] ==> dir [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp]
+    arg [-L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8] ==> dir [/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8]
+    arg [-L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+    arg [-L/opt/intel/oneapi/mkl/latest/lib/intel64] ==> dir [/opt/intel/oneapi/mkl/latest/lib/intel64]
+    arg [-L/opt/intel/oneapi/vpl/2021.1.1/lib] ==> dir [/opt/intel/oneapi/vpl/2021.1.1/lib]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//lib/release] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//lib/release]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//lib] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//lib]
+    arg [CMakeFiles/cmTC_2fb2e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-lsvml] ==> lib [svml]
+    arg [-Bdynamic] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-lirng] ==> lib [irng]
+    arg [-Bdynamic] ==> ignore
+    arg [-limf] ==> lib [imf]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-lirc] ==> lib [irc]
+    arg [-Bdynamic] ==> ignore
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-Bstatic] ==> ignore
+    arg [-lirc_s] ==> lib [irc_s]
+    arg [-Bdynamic] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8] ==> [/usr/lib/gcc/x86_64-linux-gnu/8]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu/../../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> [/usr/lib]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/opt/intel/oneapi/mkl//lib/intel64] ==> [/opt/intel/oneapi/mkl/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/mkl/latest/lib/intel64] ==> [/opt/intel/oneapi/mkl/latest/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/dal/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/dal/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp] ==> [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp]
+  collapse library dir [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8] ==> [/opt/intel/oneapi/tbb/2021.1.1/lib/intel64/gcc4.8]
+  collapse library dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  collapse library dir [/opt/intel/oneapi/mkl/latest/lib/intel64] ==> [/opt/intel/oneapi/mkl/latest/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/vpl/2021.1.1/lib] ==> [/opt/intel/oneapi/vpl/2021.1.1/lib]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib] ==> [/opt/intel/oneapi/mpi/2021.1.1/libfabric/lib]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//lib/release] ==> [/opt/intel/oneapi/mpi/2021.1.1/lib/release]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//lib] ==> [/opt/intel/oneapi/mpi/2021.1.1/lib]
+  implicit libs: [svml;irng;imf;m;gcc;gcc_s;irc;dl;gcc;gcc_s;c;gcc;gcc_s;irc_s]
+  implicit dirs: [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin;/opt/intel/oneapi/compiler/2021.1.2/linux/lib;/usr/lib/gcc/x86_64-linux-gnu/8;/usr/lib/x86_64-linux-gnu;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib;/lib;/opt/intel/oneapi/mkl/lib/intel64;/opt/intel/oneapi/mkl/latest/lib/intel64;/opt/intel/oneapi/dal/2021.1.1/lib/intel64;/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64;/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp;/opt/intel/oneapi/ipp/2021.1.1/lib/intel64;/opt/intel/oneapi/tbb/2021.1.1/lib/intel64/gcc4.8;/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib;/opt/intel/oneapi/vpl/2021.1.1/lib;/opt/intel/oneapi/mpi/2021.1.1/libfabric/lib;/opt/intel/oneapi/mpi/2021.1.1/lib/release;/opt/intel/oneapi/mpi/2021.1.1/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5ff3c/fast 
+/usr/bin/make -f CMakeFiles/cmTC_5ff3c.dir/build.make CMakeFiles/cmTC_5ff3c.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ff3c.dir/feature_tests.c.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx   -std=c11 -o CMakeFiles/cmTC_5ff3c.dir/feature_tests.c.o   -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5ff3c
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ff3c.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx      CMakeFiles/cmTC_5ff3c.dir/feature_tests.c.o  -o cmTC_5ff3c 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5893d/fast 
+/usr/bin/make -f CMakeFiles/cmTC_5893d.dir/build.make CMakeFiles/cmTC_5893d.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5893d.dir/feature_tests.c.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx   -std=c99 -o CMakeFiles/cmTC_5893d.dir/feature_tests.c.o   -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5893d
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5893d.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx      CMakeFiles/cmTC_5893d.dir/feature_tests.c.o  -o cmTC_5893d 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cde69/fast 
+/usr/bin/make -f CMakeFiles/cmTC_cde69.dir/build.make CMakeFiles/cmTC_cde69.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cde69.dir/feature_tests.c.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx   -std=c90 -o CMakeFiles/cmTC_cde69.dir/feature_tests.c.o   -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_cde69
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cde69.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/icx      CMakeFiles/cmTC_cde69.dir/feature_tests.c.o  -o cmTC_cde69 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7bc61/fast 
+/usr/bin/make -f CMakeFiles/cmTC_7bc61.dir/build.make CMakeFiles/cmTC_7bc61.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7bc61.dir/testCXXCompiler.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++     -o CMakeFiles/cmTC_7bc61.dir/testCXXCompiler.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_7bc61
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bc61.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_7bc61.dir/testCXXCompiler.cxx.o  -o cmTC_7bc61 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5f2fa/fast 
+/usr/bin/make -f CMakeFiles/cmTC_5f2fa.dir/build.make CMakeFiles/cmTC_5f2fa.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -v -o CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp
+Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0 -I/opt/intel/oneapi/mkl//include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/dev-utilities/2021.1.1/include -I/opt/intel/oneapi/dal/2021.1.1/include -I/opt/intel/oneapi/ippcp/2021.1.1/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp -I/opt/intel/oneapi/ipp/2021.1.1/include -I/opt/intel/oneapi/tbb/2021.1.1/env/../include -I/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -I/opt/intel/oneapi/dpcpp-ct/2021.1.1/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/vpl/2021.1.1/include -I/opt/intel/oneapi/dpl/2021.1.2/linux/include -I/opt/intel/oneapi/mpi/2021.1.1//include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward -internal-isystem /usr/local/include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -o CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 12.0.0 based upon LLVM 12.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/opt/intel/oneapi/mkl//include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"
+ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"
+ignoring duplicate directory "/opt/intel/oneapi/mkl/latest/include"
+ignoring duplicate directory "/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/intel/oneapi/compiler/2021.1.2/linux/include
+ /opt/intel/oneapi/mkl/latest/include
+ /opt/intel/oneapi/dev-utilities/2021.1.1/include
+ /opt/intel/oneapi/dal/2021.1.1/include
+ /opt/intel/oneapi/ippcp/2021.1.1/include
+ /opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp
+ /opt/intel/oneapi/ipp/2021.1.1/include
+ /opt/intel/oneapi/tbb/2021.1.1/env/../include
+ /opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib
+ /opt/intel/oneapi/dpcpp-ct/2021.1.1/include
+ /opt/intel/oneapi/vpl/2021.1.1/include
+ /opt/intel/oneapi/dpl/2021.1.2/linux/include
+ /opt/intel/oneapi/mpi/2021.1.1//include
+ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8
+ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8
+ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward
+ /usr/local/include
+ /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+Linking CXX executable cmTC_5f2fa
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f2fa.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++      -v CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5f2fa 
+Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5f2fa /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/x86_64-linux-gnu/../../lib64 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/lib -L/usr/lib -L/opt/intel/oneapi/mkl//lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/dal/2021.1.1/lib/intel64 -L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp -L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/vpl/2021.1.1/lib -L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib -L/opt/intel/oneapi/mpi/2021.1.1//lib/release -L/opt/intel/oneapi/mpi/2021.1.1//lib CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/intel/oneapi/compiler/2021.1.2/linux/include]
+    add: [/opt/intel/oneapi/mkl/latest/include]
+    add: [/opt/intel/oneapi/dev-utilities/2021.1.1/include]
+    add: [/opt/intel/oneapi/dal/2021.1.1/include]
+    add: [/opt/intel/oneapi/ippcp/2021.1.1/include]
+    add: [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+    add: [/opt/intel/oneapi/ipp/2021.1.1/include]
+    add: [/opt/intel/oneapi/tbb/2021.1.1/env/../include]
+    add: [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+    add: [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+    add: [/opt/intel/oneapi/vpl/2021.1.1/include]
+    add: [/opt/intel/oneapi/dpl/2021.1.2/linux/include]
+    add: [/opt/intel/oneapi/mpi/2021.1.1//include]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward]
+    add: [/usr/local/include]
+    add: [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/opt/intel/oneapi/compiler/2021.1.2/linux/include] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/include]
+  collapse include dir [/opt/intel/oneapi/mkl/latest/include] ==> [/opt/intel/oneapi/mkl/latest/include]
+  collapse include dir [/opt/intel/oneapi/dev-utilities/2021.1.1/include] ==> [/opt/intel/oneapi/dev-utilities/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dal/2021.1.1/include] ==> [/opt/intel/oneapi/dal/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/ippcp/2021.1.1/include] ==> [/opt/intel/oneapi/ippcp/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp] ==> [/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+  collapse include dir [/opt/intel/oneapi/ipp/2021.1.1/include] ==> [/opt/intel/oneapi/ipp/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/tbb/2021.1.1/env/../include] ==> [/opt/intel/oneapi/tbb/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  collapse include dir [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include] ==> [/opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/vpl/2021.1.1/include] ==> [/opt/intel/oneapi/vpl/2021.1.1/include]
+  collapse include dir [/opt/intel/oneapi/dpl/2021.1.2/linux/include] ==> [/opt/intel/oneapi/dpl/2021.1.2/linux/include]
+  collapse include dir [/opt/intel/oneapi/mpi/2021.1.1//include] ==> [/opt/intel/oneapi/mpi/2021.1.1/include]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8] ==> [/usr/include/c++/8]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8] ==> [/usr/include/x86_64-linux-gnu/c++/8]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward] ==> [/usr/include/c++/8/backward]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/opt/intel/oneapi/compiler/2021.1.2/linux/include;/opt/intel/oneapi/mkl/latest/include;/opt/intel/oneapi/dev-utilities/2021.1.1/include;/opt/intel/oneapi/dal/2021.1.1/include;/opt/intel/oneapi/ippcp/2021.1.1/include;/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp;/opt/intel/oneapi/ipp/2021.1.1/include;/opt/intel/oneapi/tbb/2021.1.1/include;/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib;/opt/intel/oneapi/dpcpp-ct/2021.1.1/include;/opt/intel/oneapi/vpl/2021.1.1/include;/opt/intel/oneapi/dpl/2021.1.2/linux/include;/opt/intel/oneapi/mpi/2021.1.1/include;/usr/include/c++/8;/usr/include/x86_64-linux-gnu/c++/8;/usr/include/c++/8/backward;/usr/local/include;/opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_5f2fa/fast ]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_5f2fa.dir/build.make CMakeFiles/cmTC_5f2fa.dir/build]
+  ignore line: [make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -v -o CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -c /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ (in-process)]
+  ignore line: [ "/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -fno-split-dwarf-inlining -debugger-tuning=gdb -v -resource-dir /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0 -I/opt/intel/oneapi/mkl//include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/dev-utilities/2021.1.1/include -I/opt/intel/oneapi/dal/2021.1.1/include -I/opt/intel/oneapi/ippcp/2021.1.1/include -I/opt/intel/oneapi/compiler/2021.1.2/linux/include -I/opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp -I/opt/intel/oneapi/ipp/2021.1.1/include -I/opt/intel/oneapi/tbb/2021.1.1/env/../include -I/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -I/opt/intel/oneapi/dpcpp-ct/2021.1.1/include -I/opt/intel/oneapi/mkl/latest/include -I/opt/intel/oneapi/vpl/2021.1.1/include -I/opt/intel/oneapi/dpl/2021.1.2/linux/include -I/opt/intel/oneapi/mpi/2021.1.1//include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward -internal-isystem /usr/local/include -internal-isystem /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -o CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/d/software/clion/clion-2019.2/bin/cmake/linux/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 12.0.0 based upon LLVM 12.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/opt/intel/oneapi/mkl//include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/compiler/2021.1.2/linux/include"]
+  ignore line: [ignoring duplicate directory "/opt/intel/oneapi/mkl/latest/include"]
+  ignore line: [ignoring duplicate directory "/usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/intel/oneapi/compiler/2021.1.2/linux/include]
+  ignore line: [ /opt/intel/oneapi/mkl/latest/include]
+  ignore line: [ /opt/intel/oneapi/dev-utilities/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/dal/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/ippcp/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/ccl/2021.1.1/include/cpu_gpu_dpcpp]
+  ignore line: [ /opt/intel/oneapi/ipp/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/tbb/2021.1.1/env/../include]
+  ignore line: [ /opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  ignore line: [ /opt/intel/oneapi/dpcpp-ct/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/vpl/2021.1.1/include]
+  ignore line: [ /opt/intel/oneapi/dpl/2021.1.2/linux/include]
+  ignore line: [ /opt/intel/oneapi/mpi/2021.1.1//include]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/x86_64-linux-gnu/c++/8]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/8/../../../../include/c++/8/backward]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /opt/intel/oneapi/compiler/2021.1.2/linux/lib/clang/12.0.0/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_5f2fa]
+  ignore line: [/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f2fa.dir/link.txt --verbose=1]
+  ignore line: [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++      -v CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5f2fa ]
+  ignore line: [Intel(R) oneAPI DPC++ Compiler 2021.1.2 (2020.10.0.1214)]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /opt/intel/oneapi/compiler/2021.1.2/linux/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/usr/bin/ld" --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5f2fa /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/x86_64-linux-gnu/../../lib64 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib -L/lib -L/usr/lib -L/opt/intel/oneapi/mkl//lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/dal/2021.1.1/lib/intel64 -L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2021.1.2/linux/lib -L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp -L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64 -L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib -L/opt/intel/oneapi/mkl/latest/lib/intel64 -L/opt/intel/oneapi/vpl/2021.1.1/lib -L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib -L/opt/intel/oneapi/mpi/2021.1.1//lib/release -L/opt/intel/oneapi/mpi/2021.1.1//lib CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_5f2fa] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu/../../lib64] ==> dir [/usr/lib/x86_64-linux-gnu/../../lib64]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [-L/opt/intel/oneapi/mkl//lib/intel64] ==> dir [/opt/intel/oneapi/mkl//lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/mkl/latest/lib/intel64] ==> dir [/opt/intel/oneapi/mkl/latest/lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/dal/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/dal/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+    arg [-L/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp] ==> dir [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp]
+    arg [-L/opt/intel/oneapi/ipp/2021.1.1/lib/intel64] ==> dir [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64]
+    arg [-L/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8] ==> dir [/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8]
+    arg [-L/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+    arg [-L/opt/intel/oneapi/mkl/latest/lib/intel64] ==> dir [/opt/intel/oneapi/mkl/latest/lib/intel64]
+    arg [-L/opt/intel/oneapi/vpl/2021.1.1/lib] ==> dir [/opt/intel/oneapi/vpl/2021.1.1/lib]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//lib/release] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//lib/release]
+    arg [-L/opt/intel/oneapi/mpi/2021.1.1//lib] ==> dir [/opt/intel/oneapi/mpi/2021.1.1//lib]
+    arg [CMakeFiles/cmTC_5f2fa.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8] ==> [/usr/lib/gcc/x86_64-linux-gnu/8]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu/../../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> [/usr/lib]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/bin/../lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/opt/intel/oneapi/mkl//lib/intel64] ==> [/opt/intel/oneapi/mkl/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/mkl/latest/lib/intel64] ==> [/opt/intel/oneapi/mkl/latest/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/dal/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/dal/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/intel/oneapi/compiler/2021.1.2/linux/lib] ==> [/opt/intel/oneapi/compiler/2021.1.2/linux/lib]
+  collapse library dir [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp] ==> [/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp]
+  collapse library dir [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64] ==> [/opt/intel/oneapi/ipp/2021.1.1/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/tbb/2021.1.1/env/../lib/intel64/gcc4.8] ==> [/opt/intel/oneapi/tbb/2021.1.1/lib/intel64/gcc4.8]
+  collapse library dir [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib] ==> [/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib]
+  collapse library dir [/opt/intel/oneapi/mkl/latest/lib/intel64] ==> [/opt/intel/oneapi/mkl/latest/lib/intel64]
+  collapse library dir [/opt/intel/oneapi/vpl/2021.1.1/lib] ==> [/opt/intel/oneapi/vpl/2021.1.1/lib]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//libfabric/lib] ==> [/opt/intel/oneapi/mpi/2021.1.1/libfabric/lib]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//lib/release] ==> [/opt/intel/oneapi/mpi/2021.1.1/lib/release]
+  collapse library dir [/opt/intel/oneapi/mpi/2021.1.1//lib] ==> [/opt/intel/oneapi/mpi/2021.1.1/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/8;/usr/lib/x86_64-linux-gnu;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib;/opt/intel/oneapi/compiler/2021.1.2/linux/lib;/lib;/opt/intel/oneapi/mkl/lib/intel64;/opt/intel/oneapi/compiler/2021.1.2/linux/compiler/lib/intel64_lin;/opt/intel/oneapi/mkl/latest/lib/intel64;/opt/intel/oneapi/dal/2021.1.1/lib/intel64;/opt/intel/oneapi/ippcp/2021.1.1/lib/intel64;/opt/intel/oneapi/ccl/2021.1.1/lib/cpu_gpu_dpcpp;/opt/intel/oneapi/ipp/2021.1.1/lib/intel64;/opt/intel/oneapi/tbb/2021.1.1/lib/intel64/gcc4.8;/opt/intel/oneapi/dnnl/2021.1.1/cpu_dpcpp_gpu_dpcpp/lib;/opt/intel/oneapi/vpl/2021.1.1/lib;/opt/intel/oneapi/mpi/2021.1.1/libfabric/lib;/opt/intel/oneapi/mpi/2021.1.1/lib/release;/opt/intel/oneapi/mpi/2021.1.1/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++2a] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4d72a/fast 
+/usr/bin/make -f CMakeFiles/cmTC_4d72a.dir/build.make CMakeFiles/cmTC_4d72a.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4d72a.dir/feature_tests.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -std=c++2a -o CMakeFiles/cmTC_4d72a.dir/feature_tests.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_4d72a
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d72a.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_4d72a.dir/feature_tests.cxx.o  -o cmTC_4d72a 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++17] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_44f24/fast 
+/usr/bin/make -f CMakeFiles/cmTC_44f24.dir/build.make CMakeFiles/cmTC_44f24.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_44f24.dir/feature_tests.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -std=c++17 -o CMakeFiles/cmTC_44f24.dir/feature_tests.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_44f24
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44f24.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_44f24.dir/feature_tests.cxx.o  -o cmTC_44f24 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d4abe/fast 
+/usr/bin/make -f CMakeFiles/cmTC_d4abe.dir/build.make CMakeFiles/cmTC_d4abe.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d4abe.dir/feature_tests.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -std=c++14 -o CMakeFiles/cmTC_d4abe.dir/feature_tests.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d4abe
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4abe.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_d4abe.dir/feature_tests.cxx.o  -o cmTC_d4abe 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7805c/fast 
+/usr/bin/make -f CMakeFiles/cmTC_7805c.dir/build.make CMakeFiles/cmTC_7805c.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7805c.dir/feature_tests.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -std=c++11 -o CMakeFiles/cmTC_7805c.dir/feature_tests.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_7805c
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7805c.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_7805c.dir/feature_tests.cxx.o  -o cmTC_7805c 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ac402/fast 
+/usr/bin/make -f CMakeFiles/cmTC_ac402.dir/build.make CMakeFiles/cmTC_ac402.dir/build
+make[1]: Entering directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ac402.dir/feature_tests.cxx.o
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++    -std=c++98 -o CMakeFiles/cmTC_ac402.dir/feature_tests.cxx.o -c /home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ac402
+/home/d/software/clion/clion-2019.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac402.dir/link.txt --verbose=1
+/opt/intel/oneapi/compiler/2021.1.2/linux/bin/clang++       CMakeFiles/cmTC_ac402.dir/feature_tests.cxx.o  -o cmTC_ac402 
+make[1]: Leaving directory '/home/d/CLionProjects/CG_P2/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
