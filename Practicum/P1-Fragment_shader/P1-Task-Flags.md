@@ -36,13 +36,13 @@
 7) Существуют ли встроенные функции? Если да, то приведите примеры таких функций.
 
 #### Список основной литературы
-1) Приложение. Язык GLSL. // Боресков А.В. Программирование компьютерной графики. Современный OpenGL. - М.: ДМК Пресс, 2019. - 372 с.
-2) Главы: Введение и Алгоритмическое рисование. // The Book of Shaders (авторы: Патрицио Гонзалес Виво и Джен Лав) // https://thebookofshaders.com/?lan=ru
+1) Приложение. Язык GLSL // Боресков А.В. Программирование компьютерной графики. Современный OpenGL. - М.: ДМК Пресс, 2019. - 372 с.
+2) [Главы: Введение и Алгоритмическое рисование. // The Book of Shaders (авторы: Патрицио Гонзалес Виво и Джен Лав)](https://thebookofshaders.com/?lan=ru)
 
 #### Список дополнительной литературы
-3) https://habr.com/ru/post/313380/
-4) https://webglfundamentals.org/webgl/lessons/ru/webgl-shaders-and-glsl.html
-5) https://www.khronos.org/registry/OpenGL/specs/gl/
+3) [LearnOpenGL. Урок 1.5 — Shaders](https://habr.com/ru/post/313380/)
+4) [Шейдеры и GLSL](https://webglfundamentals.org/webgl/lessons/ru/webgl-shaders-and-glsl.html)
+5) [GLSL. Language Specification](https://www.khronos.org/registry/OpenGL/specs/gl/)
 
 ### Шаг 3.  Построение изображение флага страны согласно варианту
 

@@ -1,10 +1,8 @@
 //Use Ctrl+Shift+P and write a command "Show glslCanvas" for live preview a fragment shaders (VSCodium)
 //Use ctrl+shift+G for live preview a fragment shaders (Atom)
-
 #ifdef GL_ES
     precision mediump float;
 #endif
-
 
 uniform vec2 u_resolution;
 
