@@ -1,14 +1,15 @@
+// Нарисовать, используя данные из одного массива!
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include <math.h>
-#include <stdio.h>
+#include <cmath>
+// #include <stdio.h>
 
-#include <fcntl.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <unistd.h>
+// #include <fcntl.h>
+#include <cstddef>
+#include <cstdlib>
+// #include <sys/stat.h>
+// #include <unistd.h>
 
 const GLuint WIDTH = 800, HEIGHT = 800;
 void key_callback(GLFWwindow *window, int key, int scancode, int action,
@@ -209,7 +210,7 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action,
 }
 
 // Параметры, с которыми производились расчеты, лежат в заголовочном файле
-// нужно возвращать ошибку!
+// нужно возращать ошибку!
 GLchar *glShaderLoad(char *path) {
   GLchar *shaderSource = NULL;
 
