@@ -7,4 +7,3 @@ void main(){
     vec4 coordinate=vec4(position,1)*matModel;
     gl_Position=coordinate;
 }
-//\0

@@ -16,4 +16,3 @@ void main(void)
 		gl_TessLevelOuter[2]=outer;
 	}
 }
-//\0
