@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.0)
 project(CG_P6)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+# set (CMAKE_CXX_FLAGS -O0)
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+
 
 include(CMakePrintHelpers)
 
 function(COPY_FILES _DIRECTORY EXTENSION)
-#    message(STATUS "Parameters = ${ARGV}")
+    #    message(STATUS "Parameters = ${ARGV}")
     message(STATUS "Copying from \"${_DIRECTORY}\" directory with \"${EXTENSION}\" extension")
     file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${_DIRECTORY})
 
@@ -23,11 +26,18 @@ endfunction()
 
 copy_files(shaders glsl)
 
-add_executable(CG_P6 main.cpp)
-        if(UNIX AND NOT APPLE)
+include_directories(${CMAKE_SOURCE_DIR}/include)
+add_executable(CG_P6    src/main.cpp 
+                        src/shader.cpp 
+                        src/scene.cpp
+                        src/icosahedron.cpp 
+                        )
+
+if(UNIX AND NOT APPLE)
     message(STATUS "Linux")
-    target_link_libraries(CG_P6 m glfw GLEW GL)
+    target_link_libraries(CG_P6 m glfw GLEW GL png)
 else()
     message(STATUS "Windows")
-    target_link_libraries(CG_P6 m glu32 opengl32 glfw3 glew32)
+    target_link_libraries(CG_P6 m glu32 opengl32 glfw3 glew32 png)
 endif()
+

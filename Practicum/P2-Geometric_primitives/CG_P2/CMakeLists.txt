@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
-project(CG_P2 VERSION 0.1.0 LANGUAGES C)
-
+# project(CG_P2 VERSION 0.1.0 LANGUAGES C)
+project(CG_P2)
 set(CMAKE_CXX_STANDARD 17)
 
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
