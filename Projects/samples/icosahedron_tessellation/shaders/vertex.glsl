@@ -9,5 +9,6 @@ out vec3 color_v;
 void main(){
     color_v = color;
     vec4 coordinate=vec4(position,1)*matModel;
+    // vec4 coordinate=vec4(position,1);
     gl_Position=coordinate;
 }

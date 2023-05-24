@@ -25,15 +25,7 @@ public:
                shaders);
 
     glLinkProgram(id);
-
-    GLint success;
-    GLchar infoLog[512];
-    // Check for linking errors
-    glGetProgramiv(id, GL_LINK_STATUS, &success);
-    if (!success) {
-      glGetProgramInfoLog(id, 512, nullptr, infoLog);
-      printf("ERROR::SHADER::PROGRAM::LINKING_FAILED\n%s\n", infoLog);
-    }
+    Status();
   }
 
   // activate the shader program
@@ -50,16 +42,36 @@ public:
     f(glGetUniformLocation(id, name.c_str()), std::forward<Types>(values)...);
   }
 
-  ~ShaderProgram(){};
+  ~ShaderProgram() { Status(); };
 
 private:
   GLuint id = 0;
+
+#define VAR_NAME(x) #x
   // utility function for checking shader linking errors.
-  // void checkCompileErrors(GLuint shader, int shaderType);
+  void Status() const {
+    GLint params;
+    glGetShaderiv(id, GL_LINK_STATUS, &params);
+    std::cout << VAR_NAME(GL_LINK_STATUS);
+    if (params) {
+      std::cout << "::SUCCESS " << std::endl;
+    } else {
+      std::cout << "::ERROR" << std::endl;
+    }
+
+    glGetShaderiv(id, GL_INFO_LOG_LENGTH, &params);
+    std::cout << "INFO_LOG_LENGTH: " << params << std::endl;
+    if (params) {
+      GLchar log[params + 1];
+      glGetShaderInfoLog(id, params, nullptr, log);
+      std::cout << log;
+    }
+  }
 };
 
 /*
-  Instead of ShaderProgram<Shader,Shader, etc.>
+  You can use Make_ShaderProgram<N>::type
+  instead of ShaderProgram<Shader, Shader, ..., N>
 */
 template <typename H, typename T> struct ShaderNumber;
 template <typename H, typename... T>

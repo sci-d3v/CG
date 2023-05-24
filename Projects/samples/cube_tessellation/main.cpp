@@ -1,3 +1,4 @@
+#include "cube.hpp"
 #include "icosahedron.hpp"
 #include "scene.hpp"
 #include "shader_program.hpp"
@@ -5,7 +6,7 @@
 
 class P6Scene : public Scene {
   std::unique_ptr<Make_ShaderProgram<5>::type> shaderProgram;
-  std::unique_ptr<Icosahedron> icosahedron;
+  std::unique_ptr<Cube> cube;
   int const pic_count = 36;
   int pic_iteration = 0;
   int parameter_tc = 1;
@@ -20,11 +21,10 @@ public:
     shaderProgram = std::make_unique<Make_ShaderProgram<5>::type>(
         Shader("shaders/vertex.glsl", GL_VERTEX_SHADER),
         Shader("shaders/tess_control.glsl", GL_TESS_CONTROL_SHADER),
-        Shader("shaders/tess_eval.glsl", GL_TESS_EVALUATION_SHADER),
+        Shader("shaders/tess_evaluation.glsl", GL_TESS_EVALUATION_SHADER),
         Shader("shaders/geometry.glsl", GL_GEOMETRY_SHADER),
         Shader("shaders/fragment.glsl", GL_FRAGMENT_SHADER));
-    icosahedron = std::make_unique<Icosahedron>();
-
+    cube = std::make_unique<Cube>();
   }
 
   void Render() override {
@@ -43,7 +43,7 @@ public:
       ++parameter_tc;
     shaderProgram->setValue("parameter_tc", glUniform1i, 1);
 
-    icosahedron->Draw();
+    cube->Draw();
 
     SaveImage(
         "images",
@@ -54,7 +54,7 @@ public:
 };
 
 int main() {
-  P6Scene scene("P6", 800, 800);
+  P6Scene scene("Cube", 800, 800);
   // scene.initScene();
   scene.RenderLoop();
   return 0;
