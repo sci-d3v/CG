@@ -18,17 +18,18 @@ extern "C" {
 
 class Scene {
   GLFWwindow *window;
+protected:
   int WIDTH, HEIGHT;
+public:
   static void KeyCallback(GLFWwindow *window, int key, int scancode, int action,
                           int mode);
 
-public:
   Scene(std::string const &windowTitle, int width, int height);
   virtual ~Scene();
-  void SaveImage(std::string const &directory, std::string const &name,
-                 int number);
+  void SaveImage(std::string const &directory, std::string const &name);
 
-  void RenderLoop();
+  void RenderLoop(GLfloat red = 0.f, GLfloat green = 0.f,
+                       GLfloat blue = 0.f, GLfloat alpha = 1.f);
 
   // Load models, textures, initialize shaders, etc.
   virtual void InitScene() {}

@@ -52,5 +52,8 @@ function(BUILD_PROJECT _DIRECTORY)
 
 endfunction()
 
-build_project("icosahedron_tessellation")
+# build_project("icosahedron_tessellation")
+# build_project("cube_tessellation")
+# build_project("P1-test")
+build_project("Fractals")
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/images)

@@ -46,7 +46,8 @@ Scene::~Scene() {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
 }
 
-void Scene::RenderLoop() {
+void Scene::RenderLoop(GLfloat red, GLfloat green ,
+                       GLfloat blue, GLfloat alpha ) {
   // configure global opengl state
   // -----------------------------
   glEnable(GL_DEPTH_TEST);
@@ -58,7 +59,7 @@ void Scene::RenderLoop() {
   while (!glfwWindowShouldClose(window)) {
     // render
     // ------
-    glClearColor(.3f, .3f, .3f, 1.0f);
+    glClearColor(red,green,blue,alpha);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     Render();
@@ -85,13 +86,13 @@ char const *TXT_ERR_CREATE_OBJECT = "TXT_ERR_CREATE_OBJECT";
   convert -delay 30 -loop 0 *.png animation.gif
   It works slowly and I've been searching better solution.
 */
-void Scene::SaveImage(std::string const &directory, std::string const &name,
-                      int number) {
+void Scene::SaveImage(std::string const &directory, std::string const &name) {
 
   std::filesystem::path imagePath(directory);
-  imagePath.append(name + std::to_string(number) + PIC_FILE_NAME_FORMAT);
+  imagePath.append(name + PIC_FILE_NAME_FORMAT);
   imagePath = std::filesystem::absolute(imagePath);
 
+  // std::cout<<imagePath<<std::endl;
   // std::ofstream file(imagePath, std::ios::binary);
   // open files
   // file.open(path.c_str());
