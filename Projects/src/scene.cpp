@@ -6,7 +6,9 @@
 
 Scene::Scene(std::string const &windowTitle, int width, int height)
     : WIDTH(width), HEIGHT(height) {
+#ifndef NDEBUG
   std::cout << __PRETTY_FUNCTION__ << std::endl;
+#endif
   // Init GLFW
   if (!glfwInit())
     exit(EXIT_FAILURE);
@@ -43,11 +45,13 @@ Scene::Scene(std::string const &windowTitle, int width, int height)
 
 Scene::~Scene() {
   glfwTerminate();
+#ifndef NDEBUG
   std::cout << __PRETTY_FUNCTION__ << std::endl;
+#endif
 }
 
-void Scene::RenderLoop(GLfloat red, GLfloat green ,
-                       GLfloat blue, GLfloat alpha ) {
+void Scene::RenderLoop(GLfloat red, GLfloat green, GLfloat blue,
+                       GLfloat alpha) {
   // configure global opengl state
   // -----------------------------
   glEnable(GL_DEPTH_TEST);
@@ -57,11 +61,10 @@ void Scene::RenderLoop(GLfloat red, GLfloat green ,
   InitScene();
   // Render loop
   while (!glfwWindowShouldClose(window)) {
-    // render
-    // ------
-    glClearColor(red,green,blue,alpha);
+    glClearColor(red, green, blue, alpha);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    // Render
     Render();
     glfwSwapBuffers(window);
     // Poll IO events (keys pressed/released, mouse moved etc.)
@@ -91,24 +94,7 @@ void Scene::SaveImage(std::string const &directory, std::string const &name) {
   std::filesystem::path imagePath(directory);
   imagePath.append(name + PIC_FILE_NAME_FORMAT);
   imagePath = std::filesystem::absolute(imagePath);
-
-  // std::cout<<imagePath<<std::endl;
-  // std::ofstream file(imagePath, std::ios::binary);
-  // open files
-  // file.open(path.c_str());
-  // std::stringstream shaderStream;
-  // // read file's buffer contents into streams
-  // shaderStream << file.rdbuf();
-
-  // std::ofstream file(imagePath, std::ios::binary);
-  // if (!file) {
-  //   std::cout << "Error creating file: " << imagePath << std::endl;
-  //   return;
-  // }
-
-  // std::filebuf *fileBuf = file.rdbuf();
-  // FILE *fp = fileBuf->;
-
+ 
   FILE *fp = fopen(imagePath.c_str(), "wb");
 
   if (!fp) {
@@ -156,58 +142,8 @@ void Scene::SaveImage(std::string const &directory, std::string const &name) {
 
   png_destroy_write_struct(&png_ptr, NULL);
   fclose(fp);
+
+#ifndef NDEBUG
+  std::cout << "Image " << imagePath << " is saved" << std::endl;
+#endif
 }
-
-/*
-void saveOpenGLImageAsPNG(const std::string& imagePath, int width, int height) {
-    std::ofstream file(imagePath, std::ios::binary);
-    if (!file) {
-        std::cout << "Error creating file: " << imagePath << std::endl;
-        return;
-    }
-
-    std::filebuf* fileBuf = file.rdbuf();
-    FILE* fp = fileBuf->file();
-
-    png_structp png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING,
-nullptr, nullptr, nullptr); if (!png_ptr) { std::cout << "Error creating PNG
-write structure." << std::endl; return;
-    }
-
-    png_infop info_ptr = png_create_info_struct(png_ptr);
-    if (!info_ptr) {
-        std::cout << "Error creating PNG info structure." << std::endl;
-        png_destroy_write_struct(&png_ptr, nullptr);
-        return;
-    }
-
-    if (setjmp(png_jmpbuf(png_ptr))) {
-        std::cout << "Error during PNG writing." << std::endl;
-        png_destroy_write_struct(&png_ptr, &info_ptr);
-        return;
-    }
-
-    png_init_io(png_ptr, fp);
-    png_set_IHDR(png_ptr, info_ptr, width, height, 8, PNG_COLOR_TYPE_RGB_ALPHA,
-                 PNG_INTERLACE_NONE, PNG_COMPRESSION_TYPE_BASE,
-PNG_FILTER_TYPE_DEFAULT); png_write_info(png_ptr, info_ptr);
-
-    std::vector<uint8_t> pixelData(4 * width * height);
-    glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE,
-pixelData.data());
-
-    std::vector<png_bytep> rows(height);
-    for (int i = 0; i < height; ++i) {
-        rows[i] = reinterpret_cast<png_bytep>(pixelData.data() + (i * width *
-4));
-    }
-
-    png_write_image(png_ptr, rows.data());
-    png_write_end(png_ptr, nullptr);
-
-    png_destroy_write_struct(&png_ptr, &info_ptr);
-    file.close();
-
-    std::cout << "Image saved successfully: " << imagePath << std::endl;
-}
-*/

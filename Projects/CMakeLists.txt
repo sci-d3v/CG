@@ -38,6 +38,9 @@ endfunction()
 function(BUILD_PROJECT _DIRECTORY)
     message(STATUS "BUILD_PROJECT: ${ARGV} function parameters")
     message(STATUS "Work directory is \"${_DIRECTORY}\"")
+
+    include_directories(${CMAKE_SOURCE_DIR}/samples/${_DIRECTORY}/include)
+
     copy_files(samples/${_DIRECTORY} shaders glsl)
 
     build_source(${_DIRECTORY})
@@ -55,5 +58,6 @@ endfunction()
 # build_project("icosahedron_tessellation")
 # build_project("cube_tessellation")
 # build_project("P1-test")
-build_project("Fractals")
+build_project("fractals")
+
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/images)
