@@ -28,16 +28,16 @@ Shader::Shader(std::string const &path, GLuint shaderType) {
   // std::cout<< shaderCode<<std::endl;
 
   // 2. compile a shader
-  Status();
   id = glCreateShader(shaderType);
   glShaderSource(id, 1, &shaderCode, nullptr);
   glCompileShader(id);
+  Status();
 }
 
 Shader::~Shader() {
-  Status();
+  // Status();
   glDeleteShader(id);
-  Status();
+  // Status();
 }
 
 std::string Shader::ShaderName(GLuint shaderType) {
