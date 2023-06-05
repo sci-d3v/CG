@@ -29,7 +29,7 @@ public:
   }
 
   // activate the shader program
-  void use() const { glUseProgram(id); }
+  void Use() const { glUseProgram(id); }
 
   /*
     Instead of
@@ -38,7 +38,7 @@ public:
   */
   // utility uniform functions
   template <typename F, typename... Types>
-  void setValue(std::string const &name, F f, Types &&...values) const {
+  void SetUniform(std::string const &name, F f, Types &&...values) const {
     f(glGetUniformLocation(id, name.c_str()), std::forward<Types>(values)...);
   }
 

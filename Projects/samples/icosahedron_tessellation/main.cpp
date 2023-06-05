@@ -1,8 +1,8 @@
-#include "cube.hpp"
 #include "icosahedron.hpp"
 #include "scene.hpp"
 #include "shader_program.hpp"
 #include <cmath>
+#include <string>
 
 class P6Scene : public Scene {
   std::unique_ptr<Make_ShaderProgram<5>::type> shaderProgram;
@@ -30,7 +30,7 @@ public:
 
   void Render() override {
     // draw points
-    shaderProgram->use();
+    shaderProgram->Use();
 
     float angle = 2.0 * M_PIf * static_cast<float>(pic_iteration) /
                   static_cast<float>(pic_count);
@@ -38,15 +38,15 @@ public:
     glm::mat4 matModel(1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
                        0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f);
     matModel = glm::rotate(matModel, angle, glm::vec3(1, 1, 0));
-    shaderProgram->setValue("matModel", glUniformMatrix4fv, 1, GL_FALSE,
+    shaderProgram->SetUniform("matModel", glUniformMatrix4fv, 1, GL_FALSE,
                             &matModel[0][0]);
     if (pic_iteration == 0)
       ++parameter_tc;
-    shaderProgram->setValue("parameter_tc", glUniform1i, parameter_tc);
+    shaderProgram->SetUniform("parameter_tc", glUniform1i, parameter_tc);
 
     icosahedron->Draw();
 
-    SaveImage("images", "picture_", pic_iteration);
+    SaveImage("images", "picture_"+std::to_string(pic_iteration));
   }
 
   ~P6Scene() { std::cout << __PRETTY_FUNCTION__ << std::endl; }
