@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+%\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+
+\include{preamble.tex}
+%
+\begin{document}
+    \begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №1. }}
+    
+    \textbf{{\large Построение изображения флага с помощью пиксельного шейдера}}
+    \end{center}
+    
+    
+    \textbf{Задание}
+    
+    Изучите исходный код программы, написанный на языке GLSL, и создайте изображение флага согласно вашему варианту задания с помощью пиксельного (фрагментного) шейдера.
+        
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1. }\textit{Настройка окружения.} 
+        
+    Откройте файл P1-Flags.glsl, расположенный в папке shaders, в ИСР (IDE), например, VS Code, VS Codium или Code-OSS (см. задание P0 с инструкцией по установке). 
+    
+    Для просмотра результата нажмите сочетание клавиш Ctrl+Shift+P и выполните команду "Show glslCanvas", которая запускает плагин glsl-сanvas и отображает результат работы пиксельного шейдера на экране.
+    
+    \textbf{Шаг 2.} \textit{Изучение языка GLSL.} 
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+    \begin{enumerate}
+    \item Что такое шейдеры? Какие виды шейдеров вы знаете? Каково их назначение?
+    \item Как расшифровывается аббревиатура GLSL?
+    \item На чем основан язык GLSL, в чем заключается его особенность?
+    \item Какие типы встроенных переменных в язык GLSL имеются? В чем их преимущество по сравнению со встроенными переменными языка Си?
+    \item Что такое uniform-переменные? Для чего они нужны?
+    \item Для чего нужна переменные gl\_FragCoord и gl\_FragColor?
+    \item Существуют ли встроенные функции? Если да, то приведите примеры таких функций.
+    \end{enumerate}
+    
+    
+    
+    Список основной литературы:
+    \begin{enumerate}
+    \item 
+    Приложение. Язык GLSL. // Боресков А.В. Программирование компьютерной графики. Современный OpenGL. - М.: ДМК Пресс, 2019. - 372 с.
+    \item 
+    \href{https://thebookofshaders.com/?lan=ru}{Главы: Введение и Алгоритмическое рисование. // The Book of Shaders (авторы: Патрицио Гонзалес Виво и Джен Лав)} 
+    
+    \end{enumerate}
+    
+    
+    Список дополнительной литературы:
+    \begin{enumerate}
+    
+    \item 
+    \href{https://habr.com/ru/post/313380/
+    }{LearnOpenGL. Урок 1.5 — Shaders}
+    
+    \item \href{https://webglfundamentals.org/webgl/lessons/ru/webgl-shaders-and-glsl.html}{Шейдеры и GLSL}
+    
+    \item 
+    \href{https://www.khronos.org/registry/OpenGL/specs/gl/}{GLSL. Language Specification}
+    
+\end{enumerate}
+    
+    \textbf{Шаг 3.} \textit{Построение изображение флага страны согласно варианту.}
+    
+    Выберите флаг страны, который необходимо вам нарисовать, согласно указанному вам варианту (см. папку tests). Помните, что необходимо корректно определить цвета, соотношение кривых на флаге и размеры флага.
+    
+    Используя, полученные знания из предыдущих шагов, модифицируйте код пиксельного шейдера так, чтобы добиться желаемого результата.
+\end{document}
+
