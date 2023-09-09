@@ -1,0 +1,20 @@
+{
+    
+  "cmake.cmakePath": "C:\\msys64\\mingw64\\bin\\cmake.exe",
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "C_Cpp.itelliSenseEngine":"Tag Parser",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "git.openRepositoryInParentFolders": "never",
+    "cmake.configureOnOpen": false,
+}
+
+{
+  "cmake.useCMakePresets": "always",
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "git.openRepositoryInParentFolders": "never",
+  "cmake.configureOnOpen": false,
+}

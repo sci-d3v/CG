@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.0)
-# project(CG_P2 VERSION 0.1.0 LANGUAGES C)
+cmake_minimum_required(VERSION 3.20)
 project(CG_P2)
-set(CMAKE_CXX_STANDARD 17)
 
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
 configure_file(${CMAKE_SOURCE_DIR}/shaders/vertex.glsl ${CMAKE_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
