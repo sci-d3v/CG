@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+\usepackage{float}
+
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+\begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №3. }}
+    
+    \textbf{{\large Построение изображения с использованием текстур}}
+    \end{center}
+    
+    
+    \textbf{Задание}
+    
+    Изучите проект программы и наложите различные текстуры на созданные части изображения аппликации (объекты, состоящие из примитивов) из предыдущей работы.
+    
+    Ссылки на некоторые готовые текстуры:
+    \begin{enumerate}
+        \item \href{https://maxtextures.ru/katalog-tekstur.html}{maxtextures.ru}
+        \item \href{https://3djungle.ru/textures/}{3djungle.ru}
+    \end{enumerate}
+    
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1.} \textit{Настройка проекта}
+    
+    Директория "CG/Practicum" содержит различные проекты. Чтобы выполнить текущее задание, откройте в отдельном окне проект, расположенный \textquotedbl CG/Practicum/P3-Texture\textquotedbl, с помощью настроенной ИСР.
+
+    Чтобы установить и настроить ИСР, можно воспользоваться инструкцией, расположенной в директории 
+    \textquotedbl CG/Practicum/P0-Getting\_started\textquotedbl .
+    
+    \textbf{Шаг 2.} \textit{Изучение проекта и необходимой литературы}
+    
+    Проект собирается из следующих основных файлов:
+    
+    \begin{enumerate}
+        \item Файл конфигурации, предназначенный для сборки проекта, имеющий название \textquotedbl CMakeCache.txt\textquotedbl~и расположенный в рабочей директории проекта.
+        \item Файл с исходным кодом программы, имеющий название \textquotedbl main.c\textquotedbl~и расположенный в рабочей директории проекта.
+        \item Файлы с различными типами шейдеров, имеющие расширение \textquotedbl glsl\textquotedbl~и расположенные в папке \textquotedbl shaders\textquotedbl.
+    \end{enumerate}
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+
+    \begin{enumerate}
+        \item 
+        Что такое текстура, текстурные координаты?
+        \item 
+        Как называется элемент текстуры?
+        \item 
+        Какие методы фильтрования текстур существуют? В чем заключаются их отличия?
+        \item 
+        Что такое сэмплирование?
+        \item 
+        В чем заключается суть технологии mipmaps?
+        \item 
+        Для чего предназначена библиотека SOIL?
+    \end{enumerate}
+
+    Список основной литературы:
+    \begin{enumerate}
+        \item \href{https://habr.com/ru/post/315294/}{Урок 1.6. Текстуры // LearnOpenGL (автор оригинала: Joey de Vries; автор перевода: Megaxela)}
+        \item \href{Ravesli.com https://ravesli.com/urok-6-tekstury-v-opengl/}{Текстуры}
+        \item \href{https://www.khronos.org/registry/OpenGL/specs/gl/}{GLSL. Language Specification}
+        \item \href{https://www.glfw.org/docs/latest/quick.html}{GLFW: Getting started}
+    \end{enumerate}
+
+    Список дополнительной литературы:
+    
+    \textbf{Шаг 3.} \textit{Построение изображение согласно варианту}
+    
+    Выберите текстуры, которые вам необходимо добавить в проект и переместите в папку \textquotedbl textures\textquotedbl. При этом не забудьте подправить \textquotedbl CMakeCache.txt\textquotedbl, чтобы ваши текстуры копировались в аналогичную папку, расположенную в директории, где происходит сборка проекта. Выберете точки на текстурном изображении, к которым будете привязывать ваши вершины. Используя, полученные знания из предыдущих шагов и прошлого задания, модифицируйте файл с исходным кодом и, если необходимо, файлы с шейдерами так, чтобы добиться желаемого результата.
+    
+\end{document}
+
