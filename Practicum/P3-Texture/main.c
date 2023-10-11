@@ -67,18 +67,18 @@ int main()
 
     // Set up vertex data (and buffer(s)) and attribute pointers
     GLfloat starVertices[] = {
-            // Positions (x,y,z) Colors (r,g,b) Texture position (x,y)
-            0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 356.f/723.f, 361.f/720.f,
-            -0.25f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 257.f/723.f, 329.f/720.f,
-            0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 200.f/723.f, 146.f/720.f,
-            0.25f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 355.f/723.f, 260.f/720.f,
-            0.8f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 520.f/723.f, 146.f/720.f,
-            0.4f, -0.05f, 0.0f, 1.0f, 1.0f, 1.0f, 456.f/723.f, 330.f/720.f,
-            0.6f, -0.6f, 0.0f, 1.0f, 1.0f, 1.0f, 613.f/723.f, 446.f/720.f,
-            0.0f, -0.2f, 0.0f, 1.0f, 1.0f, 1.0f, 415.f/723.f, 446.f/720.f,
-            -0.6f, -0.6f, 0.0f, 1.0f, 1.0f, 1.0f, 352.f/723.f, 627.f/720.f,
-            -0.4f, -0.05f, 0.0f, 1.0f, 1.0f, 1.0f, 293.f/723.f, 446.f/720.f,
-            -0.8f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 92.f/723.f, 446.f/720.f
+        // Positions (x,y,z) Colors (r,g,b) Texture position (x,y)
+        0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 356.f/723.f, 361.f/720.f,
+        -0.25f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 257.f/723.f, 329.f/720.f,
+        0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 200.f/723.f, 146.f/720.f,
+        0.25f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 355.f/723.f, 260.f/720.f,
+        0.8f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 520.f/723.f, 146.f/720.f,
+        0.4f, -0.05f, 0.0f, 1.0f, 1.0f, 1.0f, 456.f/723.f, 330.f/720.f,
+        0.6f, -0.6f, 0.0f, 1.0f, 1.0f, 1.0f, 613.f/723.f, 446.f/720.f,
+        0.0f, -0.2f, 0.0f, 1.0f, 1.0f, 1.0f, 415.f/723.f, 446.f/720.f,
+        -0.6f, -0.6f, 0.0f, 1.0f, 1.0f, 1.0f, 352.f/723.f, 627.f/720.f,
+        -0.4f, -0.05f, 0.0f, 1.0f, 1.0f, 1.0f, 293.f/723.f, 446.f/720.f,
+        -0.8f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 92.f/723.f, 446.f/720.f
     };
     GLuint starIndices[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1};
     GLuint starVBO, starVAO, starIBO;
@@ -104,11 +104,11 @@ int main()
     glBindVertexArray(0);
 
     GLfloat planets[] = {
-            // Positions          // Colors           // Texture Coords
-            1.f, 1.f, 0.0f, 1.0f, 1.0f, 1.0f, 1.f, 0.f, // Top Right
-            1.f, -1.f, 0.0f, 1.0f, 1.0f, 1.0f, 1.f, 1.f, // Bottom Right
-            -1.f, -1.f, 0.0f, 1.0f, 1.0f, 1.0f, 0.f, 1.f, // Bottom Left
-            -1.f, 1.f, 0.0f, 1.0f, 1.0f, 1.0f, 0.f, 0.f, // Top Left
+        // Positions          // Colors           // Texture Coords
+        1.f, 1.f, 0.0f, 1.0f, 1.0f, 1.0f, 1.f, 0.f, // Top Right
+        1.f, -1.f, 0.0f, 1.0f, 1.0f, 1.0f, 1.f, 1.f, // Bottom Right
+        -1.f, -1.f, 0.0f, 1.0f, 1.0f, 1.0f, 0.f, 1.f, // Bottom Left
+        -1.f, 1.f, 0.0f, 1.0f, 1.0f, 1.0f, 0.f, 0.f, // Top Left
     };
 
     GLuint planetVBO, planetVAO;
@@ -250,9 +250,6 @@ int main()
             deltaTime = 0;
             frameCount = 0;
         }
-
-
-
     }
 
     // Properly de-allocate all resources once they've outlived their purpose
@@ -282,9 +279,8 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 }
 
 //Параметры, с которыми производились расчеты, лежат в заголовочном файле
-//нужно возращать ошибку!
-GLchar *
-glShaderLoad(char *path, int *length)
+//нужно возвращать ошибку!
+GLchar *glShaderLoad(char *path, int *length)
 {
     GLchar *shaderSource = NULL;
     int descriptor = open(path, O_RDONLY);
@@ -296,16 +292,21 @@ glShaderLoad(char *path, int *length)
             struct stat statistics;
             if (fstat(descriptor, &statistics) != -1)
             {
-                shaderSource = (GLchar *) malloc(statistics.st_size);
-                fread(shaderSource, sizeof(char), statistics.st_size, file);
-                *length = (statistics.st_size);
+                shaderSource = (GLchar *) malloc(statistics.st_size + 1); // Выделение памяти с учетом нулевого символа
+                if (shaderSource)
+                {
+                    fread(shaderSource, sizeof(char), statistics.st_size, file);
+                    shaderSource[statistics.st_size] = '\0'; // Добавление нулевого символа
+                    *length = statistics.st_size;
+                }
             }
             fclose(file);
         }
         close(descriptor);
     }
-//    printf("%s\n", path);
-//    printf("%s\n", shaderSource);
+    printf("%s\n", path);
+    printf("size = %i\n", *length);
+    printf("%s\n", shaderSource);
     return shaderSource;
 }
 

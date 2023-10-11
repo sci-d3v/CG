@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.14)
-project(CG_P3 C)
-
-set(CMAKE_C_STANDARD 11)
+cmake_minimum_required(VERSION 3.20)
+project(CG_P3)
 
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
 configure_file(${CMAKE_SOURCE_DIR}/shaders/vertex.glsl ${CMAKE_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
@@ -15,8 +13,10 @@ add_executable(CG_P3 main.c)
 
 if(UNIX AND NOT APPLE)
     message(STATUS "Linux")
-    target_link_libraries(CG_P3 m glfw GLEW GL SOIL)
+    target_link_libraries(CG_P3 m SOIL glfw GLEW GL)
 else()
     message(STATUS "Windows")
     target_link_libraries(CG_P3 m SOIL glu32 opengl32 glfw3 glew32)
 endif()
+
+
