@@ -78,7 +78,7 @@ int main()
         glm::mat4 projection = glm::perspective(glm::radians(70.0f),
                                                 (float)WIDTH / HEIGHT, 0.3f, 100.0f);
         glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 0.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-
+        // glm::lookAt()
         // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene

@@ -42,5 +42,5 @@ void main()
 
     TexCoord = VertexTexCoord;
 
-    gl_Position = MVP * vec4(VertexPosition,1.0);
+    gl_Position =  vec4(VertexPosition,1.0) * transpose(MVP);
 }

@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+\usepackage{float}
+
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+\begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №4. }}
+    
+    \textbf{{\large Построение изображения трехмерной модели с использованием текстур и модели затенения Фонга}}
+    \end{center}
+    
+    
+    \textbf{Задание}
+    
+    Изучите проект программы, создайте трехмерную модель с текстурами в программе Blender согласно вашему варианту.
+        
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1.} \textit{Настройка проекта}
+    
+    Директория "CG/Practicum" содержит различные проекты. Чтобы выполнить текущее задание, откройте в отдельном окне проект, расположенный \textquotedbl CG/Practicum/P4-3D\_model\textquotedbl, с помощью настроенной ИСР.
+
+    Чтобы установить и настроить ИСР, можно воспользоваться инструкцией, расположенной в директории 
+    \textquotedbl CG/Practicum/P0-Getting\_started\textquotedbl .
+    
+    \textbf{Шаг 2.} \textit{Изучение проекта и необходимой литературы}
+    
+    Проект собирается из следующих основных файлов:
+    
+    \begin{enumerate}
+        \item Файл конфигурации, предназначенный для сборки проекта, имеющий название \textquotedbl CMakeCache.txt\textquotedbl~и расположенный в рабочей директории проекта.
+        % \item Файлы, расположенные в директории \textquotedbl src\textquotedbl, с исходным кодом программы, имеющие расширение \textquotedbl cpp\textquotedbl, и заголовочные файлы, имеющие расширение \textquotedbl cpp\textquotedbl.
+        \item Файлы программы, имеющие расширения \textquotedbl h\textquotedbl~(заголовочные файлы) и \textquotedbl cpp\textquotedbl~(файлы с исходным кодом), расположенные в директории \textquotedbl src\textquotedbl.
+        \item Файлы с различными типами шейдеров, имеющие расширение \textquotedbl glsl\textquotedbl~и расположенные в директории \textquotedbl shaders\textquotedbl.
+        \item Файлы, связанные с 3d моделью, имеющие расширения \textquotedbl obj\textquotedbl~(3d модель),  \textquotedbl mtl\textquotedbl~(конфигурационный файл) и \textquotedbl png\textquotedbl~(текстуры), расположенные в директории \textquotedbl objects\textquotedbl.
+    \end{enumerate}
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+
+    \begin{enumerate}
+        \item 
+        Для чего предназначена библиотека Assimp, как расшифровывает аббревиатура?
+        \item 
+        Как выглядит простая модель структуры организации данных в Assimp?
+        \item 
+        Что содержит файл формата "obj" и как огранизованно хранение данных в нем?
+    \end{enumerate}
+
+    Список основной литературы:
+    \begin{enumerate}
+        \item \href{https://ravesli.com/urok-16-biblioteka-importa-3d-modelej-assimp-v-opengl/}{Урок №16. Библиотека импорта 3D-моделей Assimp в OpenGL}
+        \item \href{https://habr.com/ru/post/338436/}{Урок 3.1. Assimp // LearnOpenGL (автор оригинала: Joey de Vries; автор перевода:
+        Megaxela)}
+        \item \href{https://sites.google.com/site/raznyeurokipoinformatiki/home/opengl-s/zagruzka-formata-obj}{Загрузка формата obj // (автор: Бутенко В.)}
+        \item \href{https://habr.com/ru/post/505726/}{Простой шейдер мультяшной графки в OpenGL своими руками}
+    \end{enumerate}
+
+    Список дополнительной литературы:
+    \begin{enumerate}
+        \item \href{http://www.c-jump.com/bcc/common/Talk3/Math/GLM/GLM.html#W01_0030_matrix_transformation}{OpenGL Mathematics (GLM)}
+        \item \href{https://glm.g-truc.net/0.9.2/api/a00001.html}{OpenGL Mathematics}
+    \end{enumerate}
+    
+    \textbf{Шаг 3.} \textit{Создание трехмерной модели и текстур в Blender}
+    
+    С помощью программы Blender создайте трехмерную модель и текстуры,
+    предварительно согласовав ее с преподавателем.
+    Выполните экспорт трехмерной модели в формате obj, а также сохраните текстуры в
+    этой же директории, например, в формате png.
+    Ниже представлены ссылки с уроками по созданию объектов в Blender:
+    \begin{enumerate}
+        \item \href{https://www.youtube.com/watch?v=Y0ayZ1dx78Y}{Blender первый урок Быстрый старт}
+        \item \href{https://www.youtube.com/watch?v=OoCGosEVbm0}{Моделирование трубы в Blender | Уроки для начинающих Blender}
+        \item \href{https://www.youtube.com/watch?v=vcRe0l-X4ko}{Уроки Блендер для начинающих С НУЛЯ • Уроки Blender 3.0 / 2.93 / 2.8}
+    \end{enumerate}
+    
+    Запекание текстур в Blender:
+    \begin{enumerate}
+        
+        \item \href{https://www.youtube.com/watch?v=mTWtVzgYyHE}{Урок по созданию лоу-поли камня в Blender | Запекание текстур в Blender}
+        \item \href{https://www.youtube.com/watch?v=6f3Xdy_q7Bs}{Правильное запекание карты нормалей в Blender}
+        \item \href{https://www.youtube.com/watch?v=R0KfJwV72dQ}{Запекание объемных текстур Blender}
+    \end{enumerate}
+
+    \textbf{Шаг 4.} \textit{Создание трехмерной модели и текстур в Blender}
+    
+\end{document}
+

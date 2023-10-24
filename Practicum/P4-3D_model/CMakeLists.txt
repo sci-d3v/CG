@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.14)
 set(_TARGET CG_P4)
 project(${_TARGET})
 
