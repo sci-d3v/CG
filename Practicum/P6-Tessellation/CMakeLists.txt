@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.14)
+
 project(CG_P6)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -35,9 +36,9 @@ add_executable(CG_P6    src/main.cpp
 
 if(UNIX AND NOT APPLE)
     message(STATUS "Linux")
-    target_link_libraries(CG_P6 m glfw GLEW GL png)
+    target_link_libraries(CG_P6 m glfw GLEW GL)
 else()
     message(STATUS "Windows")
-    target_link_libraries(CG_P6 m glu32 opengl32 glfw3 glew32 png)
+    target_link_libraries(CG_P6 m glu32 opengl32 glfw3 glew32)
 endif()
 

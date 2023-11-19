@@ -11,7 +11,6 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include <glm/glm.hpp>
 
-#include <png.h>
 #include <filesystem>
 
 class Scene {
@@ -23,8 +22,6 @@ class Scene {
 public:
   Scene(std::string const &windowTitle, int width, int height);
   virtual ~Scene();
-  void SaveImage(std::string const &directory, std::string const &name,
-                 int number);
 
   void RenderLoop();  
 

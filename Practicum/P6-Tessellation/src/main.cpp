@@ -24,7 +24,6 @@ public:
         Shader("shaders/geometry.glsl", GL_GEOMETRY_SHADER),
         Shader("shaders/fragment.glsl", GL_FRAGMENT_SHADER));
     icosahedron = std::make_unique<Icosahedron>();
-
   }
 
   void Render() override {
@@ -39,15 +38,11 @@ public:
     matModel = glm::rotate(matModel, angle, glm::vec3(1, 1, 0));
     shaderProgram->setValue("matModel", glUniformMatrix4fv, 1, GL_FALSE,
                             &matModel[0][0]);
-    if (pic_iteration==0)
+    if (pic_iteration == 0)
       ++parameter_tc;
     shaderProgram->setValue("parameter_tc", glUniform1i, 1);
 
     icosahedron->Draw();
-
-    SaveImage(
-        "images",
-        "picture_", pic_iteration);
   }
 
   ~P6Scene() { std::cout << __PRETTY_FUNCTION__ << std::endl; }
