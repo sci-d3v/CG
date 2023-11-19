@@ -27,9 +27,9 @@ Icosahedron::Icosahedron() {
   glBindVertexArray(0);
 
 #ifndef NDEBUG
-  std::cout << "indices: counts " << indices.size() << "size of "
+  std::cout << "indices: counts " << indices.size() << "; size of "
             << sizeof(indices) << std::endl;
-  std::cout << "points: counts " << points.size() << "size of "
+  std::cout << "points: counts " << points.size() << "; size of "
             << sizeof(points) << std::endl;
   std::cout << this << " The icosahedron was created" << std::endl;
 #endif
