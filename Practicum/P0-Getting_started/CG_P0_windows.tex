@@ -13,6 +13,8 @@
 
 \usepackage{float}
 
+
+
 \renewenvironment{itemize}{
     \begin{list}{\labelitemi}{
     \setlength{\topsep}{0pt}
@@ -22,6 +24,15 @@
     \setlength{\parsep}{0pt}
     }
 }{\end{list}}
+
+\hypersetup{
+    colorlinks=true,        % Цветные ссылки
+    linkcolor=blue,         % Цвет внутренних ссылок (например, на секции)
+    urlcolor=red,          % Цвет URL-ссылок
+    citecolor=blue,         % Цвет ссылок на библиографию
+    linkbordercolor={1 0 0},% Цвет границы вокруг ссылок при наведении (если colorlinks=false)
+    pdfborder={0 0 1},      % Параметры границ вокруг ссылок (0 0 1 - только нижняя граница)
+}
 
 %https://en.wikibooks.org/wiki/LaTeX/Title_Creation
 
@@ -168,11 +179,11 @@ MSYS2 --- среда разработки и исполнения програм
 
 \subsection{ Настройка параметров VSCodium}
 
-Зайдите в настройки, например, с помощью комбинации клавиш Ctrl+, (эту запятую не так просто увидеть) и измените параметр \textquotedbl cmake.cmakePath\textquotedbl \ (этот параметр можно написать в строке поиска для быстрого поиска) на следующий \textquotedbl C:\textbackslash msys64\textbackslash mingw64\textbackslash bin\textbackslash cmake.exe\textquotedbl (см. рис.~\ref{fig:Settings_of_interface})\ или добавьте в файл \textquotedbl settings.json\textquotedbl \ следующую строку (см. рис.~\ref{fig:Settings_of_json_file}):
+Зайдите в настройки, например, с помощью комбинации клавиш Ctrl+, (эту запятую не так просто увидеть) и измените параметр \textquotedbl cmake.cmakePath\textquotedbl \ (этот параметр можно написать в строке поиска для быстрого поиска) на следующий \textquotedbl C:\textbackslash msys64\textbackslash mingw64\textbackslash bin\textbackslash cmake.exe\textquotedbl (см. рис.~\ref{fig:Settings_of_interface})\ \textbf{или} добавьте в файл \textquotedbl settings.json\textquotedbl \ следующую строку (см. рис.~\ref{fig:Settings_of_json_file}):
 
 \textquotedbl cmake.cmakePath\textquotedbl: \textquotedbl C:\textbackslash\textbackslash msys64\textbackslash\textbackslash mingw64\textbackslash\textbackslash bin\textbackslash\textbackslash cmake.exe\textquotedbl,
 
-Обратите внимание, что если выбрана вкладка User, то изменяются настройки для пользователя, т.е. для всех проектов, а если выбрана вкладка Workspace, то только для текущего проекта и изменения вносятся в файл \textquotedbl .vscode/settings.json\textquotedbl.
+\textbf{Обратите внимание}, что если выбрана вкладка User, то изменяются настройки для пользователя, т.е. для всех проектов, а если выбрана вкладка Workspace, то только для текущего проекта и изменения вносятся в файл \textquotedbl .vscode/settings.json\textquotedbl.
 
 Примечание.
 В интерфейсе VSCodium и в файле \textquotedbl settings.json\textquotedbl \ с настройками \textbackslash ~(backslash) отображается по-разному.
