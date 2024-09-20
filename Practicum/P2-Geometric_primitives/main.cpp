@@ -1,22 +1,55 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include <math.h>
-#include <stdio.h>
+#include <cmath>
+#include <cstdio>
 
 #include <fcntl.h>
 #include <stddef.h>
-#include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <cstdlib>
+
+#include <array>
+#include <glm/glm.hpp>
+#include <string>
+
+// Define a struct to hold both position and color for each vertex
+struct Vertex {
+  glm::vec3 position;
+  glm::vec3 color;
+};
+
+// Now define the vertices with their positions and colors
+std::array<Vertex, 20> vertices = {
+    {{{-0.5f, -0.2f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{-0.3f, -0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.0f, -0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.6f, 0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.5f, 0.4f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.2f, 0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+     {{0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.0f, 1.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{0.0f, -0.2f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{-0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{-0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{-0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+     {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}}}};
 
 const GLuint WIDTH = 800, HEIGHT = 800;
-void key_callback(GLFWwindow *window, int key, int scancode, int action,
+void key_callback(GLFWwindow* window, int key, int scancode, int action,
                   int mode);
 
-GLchar *glShaderLoad(char *path);
+GLchar* glShaderLoad(const char* path);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   // Init GLFW
   glfwInit();
   // Set all the required options for GLFW
@@ -26,7 +59,7 @@ int main(int argc, char *argv[]) {
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
   // Create a GLFWwindow object that we can use for GLFW's functions
-  GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "CG_P2", NULL, NULL);
+  GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "CG_P2", NULL, NULL);
   glfwMakeContextCurrent(window);
 
   // Set the required callback functions
@@ -43,7 +76,7 @@ int main(int argc, char *argv[]) {
 
   // Build and compile our shader program
   // Vertex shader
-  const GLchar *vertexShaderSource = glShaderLoad("shaders/vertex.glsl");
+  const GLchar* vertexShaderSource = glShaderLoad("shaders/vertex.glsl");
   GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
   glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
   glCompileShader(vertexShader);
@@ -57,7 +90,7 @@ int main(int argc, char *argv[]) {
   }
 
   // Fragment shader
-  const GLchar *fragmentShaderSource = glShaderLoad("shaders/fragment.glsl");
+  const GLchar* fragmentShaderSource = glShaderLoad("shaders/fragment.glsl");
   GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
   glCompileShader(fragmentShader);
@@ -82,74 +115,34 @@ int main(int argc, char *argv[]) {
 
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
-
-  // Set up vertex data (and buffer(s)) and attribute pointers
-  GLfloat starVertices[] = {
-      // Positions            // Colors
-      0.0f,  0.0f,   0.0f, 1.0f,   1.0f,   0.0f, -0.25f, 0.5f,  0.0f,
-      1.0f,  1.0f,   0.0f, 0.0f,   1.0f,   0.0f, 1.0f,   1.0f,  0.0f,
-      0.25f, 0.5f,   0.0f, 1.0f,   1.0f,   0.0f, 0.8f,   0.5f,  0.0f,
-      1.0f,  1.0f,   0.0f, 0.4f,   -0.05f, 0.0f, 1.0f,   1.0f,  0.0f,
-      0.6f,  -0.6f,  0.0f, 1.0f,   1.0f,   0.0f, 0.0f,   -0.2f, 0.0f,
-      1.0f,  1.0f,   0.0f, -0.6f,  -0.6f,  0.0f, 1.0f,   1.0f,  0.0f,
-      -0.4f, -0.05f, 0.0f, 1.0f,   1.0f,   0.0f, -0.8f,  0.5f,  0.0f,
-      1.0f,  1.0f,   0.0f, -0.25f, 0.5f,   0.0f, 1.0f,   1.0f,  0.0f,
-  };
-  GLuint starVBO, starVAO;
-  glGenVertexArrays(1, &starVAO);
-  glGenBuffers(1, &starVBO);
+  
+  GLuint VBO, VAO;
+  glGenVertexArrays(1, &VAO);
+  glGenBuffers(1, &VBO);
   // Bind the Vertex Array Object first, then bind and set vertex buffer(s) and
   // attribute pointer(s).
-  glBindVertexArray(starVAO);
-  glBindBuffer(GL_ARRAY_BUFFER, starVBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(starVertices), starVertices,
-               GL_STATIC_DRAW);
-  // Position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-                        (GLvoid *)0);
-  glEnableVertexAttribArray(0);
-  // Color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-                        (GLvoid *)(3 * sizeof(GLfloat)));
-  glEnableVertexAttribArray(1);
-  // Unbind starVAO
-  glBindVertexArray(0);
+  glBindVertexArray(VAO);
 
-  GLfloat constellation[] = {
-      // Positions             // Colors
-      -0.5f, -0.2f, 0.0f, 0.5f,  1.0f, 0.5f, -0.3f, -0.3f, 0.0f, 0.5f,
-      1.0f,  0.5f,  0.0f, -0.1f, 0.0f, 0.5f, 1.0f,  0.5f,  0.2f, 0.0f,
-      0.0f,  0.5f,  1.0f, 0.5f,  0.6f, 0.1f, 0.0f,  0.5f,  1.0f, 0.5f,
-      0.5f,  0.4f,  0.0f, 0.5f,  1.0f, 0.5f, 0.2f,  0.3f,  0.0f, 0.5f,
-      1.0f,  0.5f,  0.2f, 0.0f,  0.0f, 0.5f, 1.0f,  0.5f};
-  GLuint constellationVBO, constellationVAO;
-  glGenVertexArrays(1, &constellationVAO);
-  glGenBuffers(1, &constellationVBO);
-  // Bind the Vertex Array Object first, then bind and set vertex buffer(s) and
-  // attribute pointer(s).
-  glBindVertexArray(constellationVAO);
-
-  glBindBuffer(GL_ARRAY_BUFFER, constellationVBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(constellation), constellation,
-               GL_STATIC_DRAW);
+  glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex),
+               vertices.data(), GL_STATIC_DRAW);
 
   // Position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-                        (GLvoid *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)0);
   glEnableVertexAttribArray(0);
   // Color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-                        (GLvoid *)(3 * sizeof(GLfloat)));
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                        (GLvoid*)(sizeof(vertices[0].position)));
   glEnableVertexAttribArray(1);
 
-  glBindVertexArray(0); // Unbind starVAO
+  glBindVertexArray(0);  // Unbind starVAO
 
   // Game loop
   while (!glfwWindowShouldClose(window)) {
-    // Check if any events have been activiated (key pressed, mouse moved etc.)
+    // Check if any events have been activated (key pressed, mouse moved etc.)
     // and call corresponding response functions
     glfwPollEvents();
-  
+
     // Render
     // Clear the colorbuffer
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -160,12 +153,13 @@ int main(int argc, char *argv[]) {
         glGetUniformLocation(shaderProgram, "translation");
     GLint scaleLocation = glGetUniformLocation(shaderProgram, "scale");
     GLint angleLocation = glGetUniformLocation(shaderProgram, "angle");
+
     glUniform3f(translationLocation, 0.0f, 0.0f, 0.0f);
     glUniform3f(scaleLocation, 1.0f, 1.0f, 1.0f);
     glUniform1f(angleLocation, 0.0f * M_PI);
 
-    // Draw the constellation
-    glBindVertexArray(constellationVAO);
+    // Draw the vertices
+    glBindVertexArray(VAO);
     glDrawArrays(GL_LINE_STRIP, 0, 8);
     glBindVertexArray(0);
 
@@ -174,15 +168,13 @@ int main(int argc, char *argv[]) {
     GLfloat angleArray[] = {-0.03f, 0.08f,  -0.03f, 0.08f,
                             0.03f,  -0.05f, -0.06f};
     for (int position = 0; position < 7; ++position) {
-
-      glUniform3f(translationLocation, constellation[position * 6],
-                  constellation[position * 6 + 1],
-                  constellation[position * 6 + 2]);
+      glUniform3f(translationLocation, vertices[position].position.x,
+                  vertices[position].position.y, vertices[position].position.z);
       glUniform3f(scaleLocation, scaleArray[position], scaleArray[position],
                   1.0f);
       glUniform1f(angleLocation, angleArray[position] * M_PI);
-      glBindVertexArray(starVAO);
-      glDrawArrays(GL_TRIANGLE_FAN, 0, 12);
+      glBindVertexArray(VAO);
+      glDrawArrays(GL_TRIANGLE_FAN, 8, 12);
       glBindVertexArray(0);
     }
 
@@ -190,18 +182,15 @@ int main(int argc, char *argv[]) {
     glfwSwapBuffers(window);
   }
   // Properly de-allocate all resources once they've outlived their purpose
-  glDeleteVertexArrays(1, &starVAO);
-  glDeleteBuffers(1, &starVBO);
-  // Properly de-allocate all resources once they've outlived their purpose
-  glDeleteVertexArrays(1, &constellationVAO);
-  glDeleteBuffers(1, &constellationVBO);
+  glDeleteVertexArrays(1, &VAO);
+  glDeleteBuffers(1, &VBO);
   // Terminate GLFW, clearing any resources allocated by GLFW.
   glfwTerminate();
   return 0;
 }
 
 // Is called whenever a key is pressed/released via GLFW
-void key_callback(GLFWwindow *window, int key, int scancode, int action,
+void key_callback(GLFWwindow* window, int key, int scancode, int action,
                   int mode) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
     glfwSetWindowShouldClose(window, GL_TRUE);
@@ -210,19 +199,19 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action,
 
 // Параметры, с которыми производились расчеты, лежат в заголовочном файле
 // нужно возвращать ошибку!
-GLchar *glShaderLoad(char *path) {
-  GLchar *shaderSource = NULL;
+GLchar* glShaderLoad(const char* path) {
+  GLchar* shaderSource = NULL;
 
   int descriptor = open(path, O_RDONLY);
 
   if (descriptor != -1) {
-    FILE *file = fdopen(descriptor, "rb");
+    FILE* file = fdopen(descriptor, "rb");
 
     if (file) {
       struct stat statistics;
 
       if (fstat(descriptor, &statistics) != -1) {
-        shaderSource = (GLchar *)malloc(statistics.st_size);
+        shaderSource = (GLchar*)malloc(statistics.st_size);
         fread(shaderSource, sizeof(char), statistics.st_size, file);
       }
       fclose(file);

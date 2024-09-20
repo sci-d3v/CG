@@ -5,7 +5,7 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
 configure_file(${CMAKE_SOURCE_DIR}/shaders/vertex.glsl ${CMAKE_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
 configure_file(${CMAKE_SOURCE_DIR}/shaders/fragment.glsl ${CMAKE_BINARY_DIR}/shaders/fragment.glsl COPYONLY)
 
-add_executable(CG_P2 main.c)
+add_executable(CG_P2 main.cpp)
 
     
 if(UNIX AND NOT APPLE)
