@@ -1,26 +1,28 @@
 \documentclass{beamer}
-\usepackage{animate}
+% \usepackage{animate}
 \usepackage{multimedia}
-\usepackage[english,russian]{babel}
 
 \usepackage{pgfpages}
 \setbeameroption{show notes on second screen}
 %https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf
 
-\usepackage{bm}
-
-
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{textcomp}
+% \usepackage{hyperref}
+% \usepackage{bookmark}
+\hypersetup{unicode=true}
 
 \setbeamertemplate{caption}[numbered]
 
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
 
-\title[Проектирование]{Проектирование}
+\title[Проецирование]{Проецирование}
 \author[Быковских Д.А.]{Быковских Дмитрий Александрович}
-\date{07.10.2023}
+\date{05.10.2024}
 
 \begin{document}
 	\begin{frame}
@@ -45,7 +47,7 @@
 		Координаты наблюдения (КН)
 		}
 
-		Преобразование проектирования
+		Преобразование проецирования
 		
 		{\hfill
 		Координаты проекции (КП)
@@ -68,11 +70,11 @@
 
 	\begin{frame}{Общая информация}
 		
-		Проектирование --- преобразование, ставящее точки трехмерного пространства 
+		Проецирование --- преобразование, ставящее точки трехмерного пространства 
 		в соответствие точки на плоскости. \\
 		$f: R^3 \to R^2$
 		
-		Виды проектирования
+		Виды проецирования
 		\begin{itemize}
 			\item параллельные;
 			\item перспективные.
@@ -80,14 +82,14 @@
 
 	\end{frame}
 
-	\begin{frame}{Параллельное проектирование}
+	\begin{frame}{Параллельное проецирование}
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
 			Плоскость проекции
 			\[
 				P: \bm{n} \cdot \bm{M} + d = 0	
 			\]
-			Лучи проектирования
+			Лучи проецирования
 			\[
 				\bm{r} = \bm{r_0} + t \bm{l}	
 			\]
@@ -149,7 +151,7 @@
 
 	\end{frame}
 
-	\begin{frame}{Перспективное проектирование}
+	\begin{frame}{Перспективное проецирование}
 
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
@@ -157,7 +159,7 @@
 			\[
 				P: \bm{n} \cdot \bm{M} + d = 0	
 			\]
-			Лучи проектирования
+			Лучи проецирования
 			\[
 				\bm{r} = (1-t) \bm{r_c} + t \bm{r_0}	
 			\]
@@ -182,9 +184,9 @@
 		}
 	\end{frame}
 
-	\section{Проектирование}
+	\section{Проецирование}
 
-	\begin{frame}{Проектирование}
+	\begin{frame}{Проецирование}
 		
 
 		\begin{columns}
@@ -223,7 +225,7 @@
 			\end{column}
 			\begin{column}{0.45\textwidth}
 				\begin{figure} 
-						\includegraphics[width=\textwidth]{images/Comparison\_of\_graphical\_projections.png}
+						\includegraphics[width=\textwidth]{images/Comparison_of_graphical_projections.png}
 					\caption{Виды плоских проекций}
 				\end{figure}
 			\end{column}
@@ -275,7 +277,7 @@
 
 		\note{
 			\begin{figure} 
-				\includegraphics[width=0.75\textwidth]{images/technical\_drawing.jpg}
+				\includegraphics[width=0.75\textwidth]{images/technical_drawing.jpg}
 			\caption{Пример чертежа}
 		\end{figure}
 		}
@@ -335,7 +337,7 @@
 	}
 
 	% \section{Преобразования наблюдения}
-	\begin{frame}{Аксонометрическое проектирование}
+	\begin{frame}{Аксонометрическое проецирование}
 
 		Коэффициенты искажения
 		\[
@@ -369,7 +371,7 @@
 		}
 		
 	\end{frame}
-	\begin{frame}{Аксонометрическое проектирование}
+	\begin{frame}{Аксонометрическое проецирование}
 
 		\begin{columns}
 			\begin{column}{0.45\textwidth}
@@ -404,7 +406,7 @@
 	\end{column}
 	\begin{column}{0.55\textwidth}
 		\begin{figure} 
-				\includegraphics[width=\textwidth]{images/fallout\_2.jpg}
+				\includegraphics[width=\textwidth]{images/fallout_2.jpg}
 			\caption{Fallout}
 		\end{figure}
 	\end{column}
@@ -455,10 +457,10 @@
 		}
 	\end{frame}
 
-	\begin{frame}{Косоугольное проектирование}
+	\begin{frame}{Косоугольное проецирование}
 	\begin{columns}
 		\begin{column}{0.45\textwidth}
-			Проекция, где проектирующие прямые образуют с плоскостью проекции угол отличный от 90\textdegree.
+			Проекция, где проецирующие прямые образуют с плоскостью проекции угол отличный от 90\textdegree.
 			{ \scriptsize
 			Поскольку проекционная плоскость перпендикулярна главной координатной оси, 
 		то сторона объекта, параллельная этой плоскости, проецируется так, что можно измерить углы и расстояния. 
@@ -483,6 +485,7 @@
 	\begin{frame}{Косоугольное проецирование}
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
+				Матрица косоугольной проекции имеет вид
 				\[
 					\begin{bmatrix}
 						1 & 0 & 0 & 0 \\
@@ -500,7 +503,26 @@
 			\end{column}
 		\end{columns}
 		\note{
-
+			\begin{center}
+				Смещение на плоскости проекции
+			\end{center}
+			\[
+				\begin{cases}
+					p_x^{*} = p_x + t_x \\
+					p_y^{*} = p_y + t_y \\
+				\end{cases}
+			\]
+	
+			Матрица смещения имеет вид:
+			\[
+				M_t = 
+				\begin{bmatrix}
+					1 & 0 & 0  \\
+					0 & 1 & 0  \\
+					t_x & t_y & 1 \\
+				\end{bmatrix}
+			\]
+		
 		}
 	\end{frame}
 
@@ -508,7 +530,7 @@
 
 		\begin{columns}
 			\begin{column}{0.45\textwidth}
-				Вид проекции, где лучи проектирования исходят из точки (центр проектирования), размещенной на конечном расстоянии от объектов и плоскости проектирования.
+				Вид проекции, где лучи проецирования исходят из точки (центр проецирования), размещенной на конечном расстоянии от объектов и плоскости проецирования.
 	
 				\[
 					\begin{bmatrix}
@@ -520,7 +542,7 @@
 					,
 				\]
 					В этом случае точки фокуса имеют координаты:
-					$c_x = (- \frac{1}{p},0,0)$,$c_y = (0,- \frac{1}{q},0)$, $c_z =(0,0, - \frac{1}{r})$
+					$c_x = (- \frac{1}{p},0,0)$, $c_y = (0,- \frac{1}{q},0)$, $c_z =(0,0, - \frac{1}{r})$
 		\end{column}
 		\begin{column}{0.55\textwidth}
 			% https://studme.org/228266/informatika/osnovnye_svoystva_perspektivnoy_proektsii
