@@ -10,9 +10,9 @@
 #include <unistd.h>
 #include <cstdlib>
 
-#include <array>
 #include <glm/glm.hpp>
 #include <string>
+#include <vector>
 
 // Define a struct to hold both position and color for each vertex
 struct Vertex {
@@ -21,27 +21,27 @@ struct Vertex {
 };
 
 // Now define the vertices with their positions and colors
-std::array<Vertex, 20> vertices = {
-    {{{-0.5f, -0.2f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{-0.3f, -0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.0f, -0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.6f, 0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.5f, 0.4f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.2f, 0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
-     {{0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.0f, 1.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{0.0f, -0.2f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{-0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{-0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{-0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-     {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}}}};
+std::vector<Vertex> vertices = {{{{-0.5f, -0.2f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{-0.3f, -0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.0f, -0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.6f, 0.1f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.5f, 0.4f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.2f, 0.3f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+                                 {{0.2f, 0.0f, 0.0f}, {0.5f, 1.0f, 0.5f}},
+
+                                 {{0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.0f, 1.0f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{0.0f, -0.2f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{-0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{-0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
+                                 {{-0.8f, 0.5f, 0.0f}, {1.0f, .0f, 0.0f}},
+                                 {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}}}};
 
 const GLuint WIDTH = 800, HEIGHT = 800;
 void key_callback(GLFWwindow* window, int key, int scancode, int action,
@@ -115,7 +115,7 @@ int main(int argc, char* argv[]) {
 
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
-  
+
   GLuint VBO, VAO;
   glGenVertexArrays(1, &VAO);
   glGenBuffers(1, &VBO);
@@ -164,7 +164,7 @@ int main(int argc, char* argv[]) {
     glBindVertexArray(0);
 
     // Draw the stars
-    GLfloat scaleArray[] = {0.05f, 0.04f, 0.04f, 0.06f, 0.05f, 0.03f, 0.04f};
+    GLfloat scaleArray[] = {0.05f, 0.4f, 0.04f, 0.06f, 0.05f, 0.03f, 0.04f};
     GLfloat angleArray[] = {-0.03f, 0.08f,  -0.03f, 0.08f,
                             0.03f,  -0.05f, -0.06f};
     for (int position = 0; position < 7; ++position) {
@@ -194,7 +194,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action,
                   int mode) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
     glfwSetWindowShouldClose(window, GL_TRUE);
-  glfwSetWindowSize(window, 600, 600);
+  glfwSetWindowSize(window, WIDTH, HEIGHT);
 }
 
 // Параметры, с которыми производились расчеты, лежат в заголовочном файле
@@ -219,6 +219,6 @@ GLchar* glShaderLoad(const char* path) {
     close(descriptor);
   }
   printf("%s\n", path);
-  printf("%s\n", shaderSource);
+  // printf("%s\n", shaderSource);
   return shaderSource;
 }

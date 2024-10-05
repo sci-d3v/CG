@@ -1,6 +1,7 @@
 build/
 .cache/
 .idea/
+documentation/
 **/images/*.pdf
 
 *.aux
