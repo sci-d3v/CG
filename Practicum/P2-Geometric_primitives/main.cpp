@@ -40,7 +40,7 @@ std::vector<Vertex> vertices = {{{{-0.5f, -0.2f, 0.0f}, {0.5f, 1.0f, 0.5f}},
                                  {{0.0f, -0.2f, 0.0f}, {1.0f, 1.0f, 0.0f}},
                                  {{-0.6f, -0.6f, 0.0f}, {1.0f, 1.0f, 0.0f}},
                                  {{-0.4f, -0.05f, 0.0f}, {1.0f, 1.0f, 0.0f}},
-                                 {{-0.8f, 0.5f, 0.0f}, {1.0f, .0f, 0.0f}},
+                                 {{-0.8f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}},
                                  {{-0.25f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}}}};
 
 const GLuint WIDTH = 800, HEIGHT = 800;
@@ -164,7 +164,7 @@ int main(int argc, char* argv[]) {
     glBindVertexArray(0);
 
     // Draw the stars
-    GLfloat scaleArray[] = {0.05f, 0.4f, 0.04f, 0.06f, 0.05f, 0.03f, 0.04f};
+    GLfloat scaleArray[] = {0.05f, 0.04f, 0.04f, 0.06f, 0.05f, 0.03f, 0.04f};
     GLfloat angleArray[] = {-0.03f, 0.08f,  -0.03f, 0.08f,
                             0.03f,  -0.05f, -0.06f};
     for (int position = 0; position < 7; ++position) {
