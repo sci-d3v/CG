@@ -1,7 +1,6 @@
 \documentclass{beamer}
-\usepackage{animate}
+% \usepackage{animate}
 \usepackage{multimedia}
-\usepackage[english,russian]{babel}
 
 \usepackage{pgfpages}
 \setbeameroption{show notes on second screen}
@@ -9,6 +8,12 @@
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{textcomp}
+% \usepackage{hyperref}
+% \usepackage{bookmark}
+\hypersetup{unicode=true}
 
 \setbeamertemplate{caption}[numbered]
 
@@ -18,55 +23,22 @@
 
 \title[Отсечение]{Отсечение}
 \author[Быковских Д.А.]{Быковских Дмитрий Александрович}
-\date{14.10.2023}
+\date{19.10.2024}
 
 \begin{document}
 	\begin{frame}
 		\titlepage
 	\end{frame}
 
-	\begin{frame}{Конвейер трехмерного преобразования}
-		
-		{\hfill
-		Модельные координаты (МК)
-		}
-		
-		Преобразование моделирования
-		
-		{\hfill
-		Внешние координаты (ВК)
-		}
-
-		Преобразование наблюдения
-
-		{\hfill
-		Координаты наблюдения (КН)
-		}
-
-		Преобразование проецирования
-		
-		{\hfill
-		Координаты проекции (КП)
-		}
-		
-		Преобразование нормировки и отсечение
-		
-		{\hfill
-		Нормированные координаты (НК)
-		}
-
-		Преобразование поля просмотра
-		
-		{\hfill
-		Координаты устройства (КУ)
-		}				
-	\end{frame}
-
 	\begin{frame}{Отсечение}{Clipping}
 %eor.dgu.ru/lectures_f/Курс_леций_Компьютерная_геометрия_и_графика_Гаджиев_А_М/лекция_8.htm
 		Отсечение – это процесс, связанный с выделением и визуализацией фрагмента плоской или пространственной сцены, расположенного внутри (внутреннее отсечение) или, наоборот, вне (внешнее отсечение) некоторой соответственно двумерной или трехмерной отсекающей фигуры (отсекателя). Оставшаяся часть сцены при этом игнорируется, т.е. визуализации не подлежит.
 
-		Изображение формируется на основе связанных вершин
+		Изображение формируется на основе связанных вершин.
+
+		Culling и Clipping
+
+
 
 		\note{
 			На этом этапе могут решаться следующие задачи
@@ -88,15 +60,21 @@
 
 		Рассматривается случай с параллельными границами, которые также параллельны осям координат.
 		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{figure} 
+					\includegraphics[width=\textwidth]{images/clipping_ex3.jpg}
+					\caption{Схема отсечения}
+				\end{figure}
+			\end{column}
 			\begin{column}{0.6\textwidth}
+				\centering
 				Должно выполняться условие
-				
 				$
 					\begin{cases}
 						x_l \leqslant x \leqslant x_r \\
 						y_b \leqslant y \leqslant y_t	\\
 					\end{cases}
-				$
+				$				
 				
 				\begin{table}
 					\caption{таблица кодов}
@@ -113,21 +91,22 @@
 					\end{center}
 				\end{table}
 
-				На основе представленного условия строятся бинарные коды, длиной равной 4.
+				т.е., исходя из условия, определяются бинарные коды, длиной равной 4.
 				% (XXXX $\to$ ВНПЛ)
 				% Принадлежит или нет.
-			\end{column}
-			\begin{column}{0.4\textwidth}
-				\begin{figure} 
-					\includegraphics[width=\textwidth]{images/clipping_ex3.jpg}
-					\caption{Схема кодов}
-				\end{figure}
+
 			\end{column}
 		\end{columns}
 
 		\note{
-			Для отрезков получаются следующие коды:
+			\hfill Для отрезков получаются следующие коды:
 			\begin{columns}
+				\begin{column}{0.5\textwidth}
+					\begin{figure} 
+						\includegraphics[width=\textwidth]{images/example.png}
+						\caption{Схема с различными случаями}
+					\end{figure}
+				\end{column}
 				\begin{column}{0.5\textwidth}
 					\begin{enumerate}
 						\item 
@@ -180,12 +159,6 @@
 						$ не виден
 					\end{enumerate}
 				\end{column}
-				\begin{column}{0.5\textwidth}
-					\begin{figure} 
-						\includegraphics[width=\textwidth]{images/example.png}
-						\caption{Схема с различными случаями}
-					\end{figure}
-				\end{column}
 			\end{columns}
 		}
 
@@ -196,8 +169,8 @@
 
 
 		\begin{figure} 
-			\includegraphics[width=0.45\textwidth]{images/scheme_2d.png}
-			\caption{Схема}
+			\includegraphics[width=0.42\textwidth]{images/scheme_2d.png}
+			\caption{Условный алгоритм двумерного отсечения}
 		\end{figure}
 
 		\note{
@@ -210,6 +183,8 @@
 
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
+
+				Рассмотрим задачу пересечения двух отрезков (двух прямых).
 				
 				Пусть даны координаты отрезка $P_a(x_a, y_a)$ и $P_b(x_b, y_b)$.
 
@@ -225,7 +200,7 @@
 			\begin{column}{0.5\textwidth}
 				\begin{figure} 
 					\includegraphics[width=0.6\textwidth]{images/example2.png}
-					\caption{Схема}
+					\caption{Схема пересечения отрезка и отсекателя}
 				\end{figure}
 			\end{column}
 		\end{columns}
@@ -253,7 +228,6 @@
 		При поиске т. пересечения с некоторыми границами отсекателя 
 	точки пересечения могут м.б. не обнаружены.
 		}
-
 
 	\end{frame}
 
@@ -304,9 +278,9 @@
 	\end{frame}
 
 	\begin{frame}{Алгоритм Кируса-Бека (Cyrus-Beck)}{Отсечение двумерного отрезка выпуклой областью}
-		Для простоты понимания рассмотрим случай плоского выпуклого многоугольника
+		Для простоты понимания рассмотрим случай плоского выпуклого многоугольника.
 
-		Суть алгоритма основано на следующем условии
+		Суть алгоритма заключается в следующем условии
 		\[
 			n_j [P_i(t) - f_j]
 			\begin{cases}
@@ -317,9 +291,11 @@
 			,
 		\]
 		где
-		$f_j$ --- точка выпуклой области;
+		$j$ --- номер точки границы;
+		$i$ --- номер отрезка;
 		$n_j$ --- нормаль границы;
-		$P_i(t)$ --- параметрическое уравнение отрезка;
+		$f_j$ --- точка выпуклой области;
+		$P_i(t)$ --- параметрическое уравнение отрезка.
 		
 		Примечание. \\ Нормировать вектора необязательно, т.к. интересен только знак.
 
@@ -338,7 +314,7 @@
 \end{frame}
 
 \begin{frame}{Алгоритм Кируса-Бека (Cyrus-Beck)}{Отсечение двумерного отрезка выпуклой областью}
-	Пример
+	Рассмотрим пример.
 
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
@@ -417,7 +393,7 @@
 	
 	Поэтому отбрасываются случаи $t = -3/2$ и $t = 2$.
 
-	Далее при подстановке каждого значения параметра $t$ в каждое уравнение должно быть неотрицательное значение, т.е. скалярное произведение должно быть неотрицательным $0$.
+	Далее при подстановке каждого значения параметра $t$ в каждое уравнение скалярное произведение не должно быть отрицательным.
 	\\
 	-
 }
@@ -446,10 +422,9 @@
 	\note{
 		\begin{figure} 
 			\includegraphics[width=0.45\textwidth]{images/example4.png}
-			\includegraphics[width=0.45\textwidth]{images/example5.png}
-			\caption {Пример вогнутой области}
+			\includegraphics[width=0.38\textwidth]{images/example5.png}
+			\caption {Пример определения вогнутой области}
 		\end{figure}
-		
 		Примечание. \\
 		Для таких областей тоже можно строить, но нужно их разбивать на выпуклые области.
 
@@ -457,12 +432,35 @@
 	\end{frame}
 
 	\begin{frame}{Трехмерное отсечение}{ для параллелепипеда}
-		Представленный алгоритм Коэна-Сазерленда можно легко адаптировать для трехмерного случая, расширив кодовую бинарную последовательность для точки до 6 бит.
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				Представленный алгоритм Коэна-Сазерленда можно легко адаптировать для трехмерного случая, расширив кодовую бинарную последовательность для точки до 6 бит.
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{figure} 
+					\includegraphics[width=1.0\textwidth]{images/clipping_1.jpg}
+					\caption {Прямоугольный параллелепипед}
+				\end{figure}
+		\end{column}
+	\end{columns}
 
-		\begin{figure} 
-			\includegraphics[width=0.45\textwidth]{images/clipping_1.jpg}
-			\caption {Прямоугольный параллелепипед}
-		\end{figure}
+
+
+
+
+		\note{
+
+		Для точек отрезов $P_i(x,y,z)$, рисуемых на экране, должно выполняться следующее условие:
+
+		\[
+			\begin{cases}
+				x_l \leqslant x \leqslant x_r \\
+				y_b \leqslant y \leqslant y_t	\\
+				z_n \leqslant z \leqslant z_f	\\
+			\end{cases}
+		\]
+		}
 
 	\end{frame}
 
@@ -470,6 +468,7 @@
 
 		\begin{columns}
 			\begin{column}{0.5\textwidth}
+				Рассмотрим трехмерное отсечение для усеченной пирамиды. 
 
 			Каноническая форма: \\
 			$x_l = -1$, $x_r = 1$, \\
@@ -486,6 +485,10 @@
 
 		\end{column}
 	\end{columns}
+
+	\note{
+		Этот вариант актуален для перспективного проецирования.
+	}
 
 	\end{frame}
 	
