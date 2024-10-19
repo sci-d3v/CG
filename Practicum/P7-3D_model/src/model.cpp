@@ -208,13 +208,6 @@ unsigned int TextureFromFile(const char *path, const std::string &directory, boo
         default:
             std::cout << "The texture failed to select a channel format: " << path << std::endl;
         }
-        if (channels == 1)
-            format = GL_RED;
-        else if (channels == 3)
-            format = GL_RGB;
-        else if (channels == 4)
-            format = GL_RGBA;
-
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data_image);
         glGenerateMipmap(GL_TEXTURE_2D);
         SOIL_free_image_data(data_image);

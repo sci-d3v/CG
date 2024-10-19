@@ -1,0 +1,7 @@
+https://www.researchgate.net/figure/A-schematic-of-the-memory-hierarchy-of-the-Nvidia-Fermi-architecture-with-the-peak_fig4_51927898
+
+https://steps3d.narod.ru/tutorials/vulkan-3-tutorial.html
+
+https://dvsav.ru/vulkan-6/
+
+https://habr.com/ru/articles/569318/
