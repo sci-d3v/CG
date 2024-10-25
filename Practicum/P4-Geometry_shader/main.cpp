@@ -6,6 +6,7 @@
 
 #include <cmath>
 #include <fstream>
+#include <functional>
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -82,7 +83,7 @@ int main() {
       // convert stream into string
       shaderCode = stringStream.str();
     } catch (std::ifstream::failure& e) {
-      std::cerr << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what()
+      std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what()
                 << std::endl
                 << path << std::endl;
       exit(EXIT_FAILURE);
@@ -103,7 +104,7 @@ int main() {
     glGetShaderiv(*shaderID, GL_COMPILE_STATUS, &success);
     if (!success) {
       glGetShaderInfoLog(*shaderID, 512, NULL, infoLog);
-      std::cerr << "ERROR::SHADER::COMPILATION_FAILED: " << infoLog
+      std::cout << "ERROR::SHADER::COMPILATION_FAILED: " << infoLog
                 << std::endl;
       exit(EXIT_FAILURE);
     }
@@ -139,7 +140,7 @@ int main() {
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
       glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-      std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n"
+      std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n"
                 << infoLog << std::endl;
       exit(EXIT_FAILURE);
     }
@@ -152,7 +153,7 @@ int main() {
   GetShaderProgram(shaderProgram, vertexShader, geometryShader, fragmentShader);
 
   // configure global opengl state
-  // -----------------------------
+  // ------
   glEnable(GL_DEPTH_TEST);
 
   // Set up vertex data (and buffer(s)) and attribute pointers
@@ -184,9 +185,11 @@ int main() {
   const double SRR = 2.0;
   double endTime = 0.0, deltaTime = 0.0;
   int frameCount = 0;
+  // ------
+  int recursionSteps = 0;
+  std::string sequence = "F";
+  std::vector<float> angleCoefficients;
   // render loop
-  // -----------
-  int recursion_steps = 0;
   while (!glfwWindowShouldClose(window)) {
 
     // Update time delay according to FPS
@@ -194,35 +197,6 @@ int main() {
       currentTime = glfwGetTime();
     } while (currentTime - startTime < FPS);
     startTime = currentTime;
-
-    // render
-    // ------
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // draw points
-    glUseProgram(shaderProgram);
-
-    float angle = 0.5f * (float)glfwGetTime();
-
-    glm::mat4 matModel = glm::mat4(1.0f);
-
-    matModel = glm::rotate(matModel, angle, glm::vec3(0, 1, 0));
-
-    GLint ulMatModel = glGetUniformLocation(shaderProgram, "matModel");
-    glUniformMatrix4fv(ulMatModel, 1, GL_FALSE, &matModel[0][0]);
-
-    GLint ulRecursionSteps =
-        glGetUniformLocation(shaderProgram, "recursion_steps");
-    glUniform1i(ulRecursionSteps, recursion_steps%2);
-
-    glBindVertexArray(VAO);
-    glDrawElements(GL_LINE_STRIP, indices.size(), GL_UNSIGNED_INT, nullptr);
-
-    // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-    // -------------------------------------------------------------------------------
-    glfwSwapBuffers(window);
-    glfwPollEvents();
 
     // Message update time delay according to SRR
     frameCount++;
@@ -234,8 +208,67 @@ int main() {
       deltaTime = 0;
       frameCount = 0;
 
-      ++recursion_steps;
+      if (angleCoefficients.size() > 100) {
+        sequence = "F";
+        recursionSteps = 0;
+      } else {
+        ++recursionSteps;
+        const std::string from = "F";
+        const std::string to = "[F+F--F+F]";
+        size_t pos = 0;
+        while ((pos = sequence.find(from, pos)) != std::string::npos) {
+          sequence.replace(pos, from.length(), to);
+          pos += to.length();
+        }
+      }
+
+      int count = 0;
+      angleCoefficients.clear();
+      for (auto& coeff : sequence) {
+        if (coeff == 'F') {
+          angleCoefficients.push_back(count);
+          count = 0;
+        } else if (coeff == '+') {
+          ++count;
+        } else if (coeff == '-') {
+          --count;
+        }
+      }
+
+      std::cout<<"recursionSteps = " << recursionSteps << std::endl;
+      std::cout<<"sequence = " << sequence << std::endl;
+      std::cout<<"size of angleCoefficients = " << angleCoefficients.size() << std::endl;
     }
+
+    // render
+    // ------
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // draw points
+    glUseProgram(shaderProgram);
+
+    float angle = 0.5f * (float)glfwGetTime();
+    glm::mat4 matModel = glm::mat4(1.0f);
+    matModel = glm::rotate(matModel, angle, glm::vec3(0, 1, 0));
+
+    GLint ulMatModel = glGetUniformLocation(shaderProgram, "matModel");
+    glUniformMatrix4fv(ulMatModel, 1, GL_FALSE, &matModel[0][0]);
+
+    GLint ulRecursionSteps =
+        glGetUniformLocation(shaderProgram, "recursionSteps");
+    glUniform1i(ulRecursionSteps, recursionSteps);
+
+    GLint ulAC = glGetUniformLocation(shaderProgram, "angleCoefficients");
+    glUniform1fv(ulAC, angleCoefficients.size(), angleCoefficients.data());
+
+    glBindVertexArray(VAO);
+    glDrawElements(GL_LINE_STRIP, indices.size(), GL_UNSIGNED_INT, nullptr);
+
+    // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+    // ------
+    glfwSwapBuffers(window);
+    glfwPollEvents();
   }
 
   // Properly de-allocate all resources once they've outlived their purpose

@@ -13,7 +13,7 @@
 
 void create_png();
 
-const GLuint WIDTH = 800, HEIGHT = 600;
+const GLuint WIDTH = 500, HEIGHT = 500;
 void key_callback(GLFWwindow* window, int key, int scancode, int action,
                   int mode);
 
@@ -140,7 +140,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action,
                   int mode) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
     glfwSetWindowShouldClose(window, GL_TRUE);
-  glfwSetWindowSize(window, 600, 600);
+  glfwSetWindowSize(window, WIDTH, HEIGHT);
 }
 
 // Параметры, с которыми производились расчеты, лежат в заголовочном файле

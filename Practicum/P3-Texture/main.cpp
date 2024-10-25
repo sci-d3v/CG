@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {
       // convert stream into string
       shaderCode = stringStream.str();
     } catch (std::ifstream::failure& e) {
-      std::cerr << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what()
+      std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what()
                 << std::endl
                 << path << std::endl;
       exit(EXIT_FAILURE);
@@ -118,7 +118,7 @@ int main(int argc, char* argv[]) {
     glGetShaderiv(*shaderID, GL_COMPILE_STATUS, &success);
     if (!success) {
       glGetShaderInfoLog(*shaderID, 512, NULL, infoLog);
-      std::cerr << "ERROR::SHADER::COMPILATION_FAILED: " << infoLog
+      std::cout << "ERROR::SHADER::COMPILATION_FAILED: " << infoLog
                 << std::endl;
       exit(EXIT_FAILURE);
     }
@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
       glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-      std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n"
+      std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n"
                 << infoLog << std::endl;
       exit(EXIT_FAILURE);
     }
@@ -171,10 +171,10 @@ int main(int argc, char* argv[]) {
     // Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * sizeof(Vertex),
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex),
                  vertices.data(), GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices) * sizeof(GLuint),
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint),
                  indices.data(), GL_STATIC_DRAW);
     // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat),
@@ -225,7 +225,7 @@ int main(int argc, char* argv[]) {
           format = GL_RGBA;
           break;
         default: {
-          std::cerr << "The starTextureID failed to select a channel format: "
+          std::cout << "The starTextureID failed to select a channel format: "
                     << path << std::endl;
           exit(EXIT_FAILURE);
         }
@@ -237,7 +237,7 @@ int main(int argc, char* argv[]) {
       // Unbind starTextureID when done, so we won't accidentally mess up our starTextureID.
       glBindTexture(GL_TEXTURE_2D, 0);
     } else {
-      std::cerr << "The starTextureID failed to load at path: " << path
+      std::cout << "The starTextureID failed to load at path: " << path
                 << std::endl;
       SOIL_free_image_data(data_image);
       exit(EXIT_FAILURE);
