@@ -38,6 +38,7 @@ void main() {
     // Drawing a simple base case for test
     for (int i = 0; i < gl_in.length(); i++) {
       gl_Position = gl_in[i].gl_Position;
+      gl_Position *= matModel;
       color_f = vec3(0, 0, 1);
       EmitVertex();
     }
@@ -62,6 +63,8 @@ void main() {
       next_direction = rotate_around_z(direction, next_angle);
       next_position += next_direction * direction_length;
       emit_vertex(next_position, next_color);
+      if(ind % 3 == 0)
+        EndPrimitive();
     }
 
     EndPrimitive();
