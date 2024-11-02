@@ -1,7 +1,6 @@
 \documentclass{beamer}
-\usepackage{animate}
+% \usepackage{animate}
 \usepackage{multimedia}
-\usepackage[english,russian]{babel}
 
 \usepackage{pgfpages}
 \setbeameroption{show notes on second screen}
@@ -9,6 +8,12 @@
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{textcomp}
+% \usepackage{hyperref}
+% \usepackage{bookmark}
+\hypersetup{unicode=true}
 
 \setbeamertemplate{caption}[numbered]
 
@@ -18,7 +23,7 @@
 
 \title[Сплайны]{Поверхности}
 \author[Быковских Д.А.]{Быковских Дмитрий Александрович}
-\date{18.11.2023}
+\date{02.11.2024}
 
 \begin{document}
 	\begin{frame}
@@ -30,7 +35,7 @@
 
 		Ортогональная проекция --- сеть ортогональных кривых, используемых для изображения трехмерных объектов на плоскости.
 		
-		Такую модель удобно исследовать с целью получения различных \textquotedbl физических\textquotedbl~ характеристик: размер, объем, площадь поверхности, угол кривизны и др.
+		Такую модель удобно исследовать с целью получения различных \textquotedbl физических\textquotedbl~характеристик: размер, объем, площадь поверхности, угол кривизны и др.
 
 		Причины
 		\begin{itemize}
@@ -42,7 +47,7 @@
 			\begin{figure} 
 				\includegraphics[width=0.61\textwidth]{images/airship-model.jpg}
 				\includegraphics[width=0.38\textwidth]{images/airplane-model.jpg}
-				\caption{Каркасные модели}
+				\caption{Представление каркасных моделей: с помощью ортогональных проекций (слева); с помощью триангуляции (справа)}
 			\end{figure}
 		}
 
@@ -55,7 +60,8 @@
 
 		Параметры $(u,v) \to (x,y,z)$, где $u,v \in [0,1]$.
 
-		Пример
+		Задача. \\
+		Построить поверхность согласно его параметрическому представлению.
 		\[
 		\begin{cases}
 			x(u,v) = 3u +v \\
@@ -67,7 +73,7 @@
 		\note{
 			\begin{figure} 
 				\includegraphics[width=0.65\textwidth]{images/example1.png}
-				\caption{Параметрическое пространство (слева) и объектное пространство (справа)}
+				\caption{Иллюстрация к примеру: параметрическое пространство (слева) и объектное пространство (справа)}
 			\end{figure}
 		}
 
@@ -143,7 +149,7 @@
 			\note{
 				\begin{figure} 
 					\includegraphics[width=\textwidth]{images/example2.png}
-					\caption{Билинейная поверхность. Определяющие угловые точки (слева). поверхность (справа)}
+					\caption{Билинейная поверхность: определяющие угловые точки (слева); поверхность (справа)}
 				\end{figure}
 			}
 
@@ -174,7 +180,7 @@
 				\begin{figure} 
 					\includegraphics[width=0.51\textwidth]{images/Helicoid.png}
 					\includegraphics[width=0.29\textwidth]{images/hyperboloid.jpg}
-					\caption{Геликоид (слева) и однополостный гиперболоид (справа)}
+					\caption{Линейчатые поверхности: геликоид (слева); однополостный гиперболоид (справа)}
 				\end{figure}
 			}
 
@@ -182,6 +188,7 @@
 
 		\begin{frame}{Линейчатые поверхности}
 
+			Один способ представления линейчатой поверхности.
 			\[
 				S(u,v) = 
 				\begin{bmatrix}
@@ -197,7 +204,8 @@
 				,
 				\]
 				где $P(u,0)=f(u)$, $P(u,1)=g(u)$.
-
+			
+				Другой способ представления линейчатой поверхности.
 				\[
 					S(u,v) = 
 					\begin{bmatrix}
@@ -305,7 +313,7 @@
 							F_0(t) \\
 							F_1(t) \\
 							F_2(t) \\
-							P_3(t)	\\
+							F_3(t)	\\
 						\end{bmatrix}^T
 						=
 						\begin{bmatrix}
@@ -327,7 +335,7 @@
 
 	\begin{frame}{Бикубическая поверхность Кунса}
 		\[
-			S(u,v) = [U][N][P][N]^T[W]
+			S(u,v) = [U][N][P][N]^T[V]
 			,
 		\]
 		где
@@ -410,7 +418,7 @@
 			\begin{figure} 
 				\includegraphics[width=0.45\textwidth]{images/Bezier_surface.png}
 				\includegraphics[width=0.45\textwidth]{images/utah_teapot.jpg}
-				\caption{Поверхность Безье: модель при $n=m=3$(слева), чайник из Юты(справа)}
+				\caption{Поверхность Безье: модель при $n=m=3$ (слева); чайник из Юты (справа)}
 			\end{figure}
 		}
 	\end{frame}
