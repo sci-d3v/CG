@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+\usepackage{float}
+
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+\begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №5. }}
+    
+    \textbf{{\large Построение изображения трехмерной модели с использованием текстур и модели затенения Фонга}}
+    \end{center}
+    
+    \textbf{Задание}
+    
+    Изучите проект программы, создайте трехмерную модель с текстурами в программе Blender согласно вашему варианту.
+    
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1.} \textit{Настройка проекта}
+    
+    Директория \texttt{CG/Practicum} содержит различные проекты. Чтобы выполнить текущее задание, откройте в отдельном окне проект, расположенный в директории \texttt{CG/Practicum/P5-3D\_model}, с помощью настроенной ИСР.
+    
+    Чтобы установить и настроить ИСР, можно воспользоваться инструкцией, расположенной в директории \texttt{CG/Practicum/P0-Getting\_started}.
+    
+    \textbf{Шаг 2.} \textit{Изучение проекта и необходимой литературы}
+    
+    Проект собирается из следующих основных файлов:
+    
+    \begin{enumerate}
+        \item Файл конфигурации, предназначенный для сборки проекта, имеющий название \texttt{CMakeCache.txt} и расположенный в рабочей директории проекта.
+        \item Файлы программы, имеющие расширения \texttt{.h} (заголовочные файлы) и \texttt{.cpp} (файлы с исходным кодом), расположенные в директории \texttt{src}.
+        \item Файлы с различными типами шейдеров, имеющие расширение \texttt{.glsl} и расположенные в директории \texttt{shaders}.
+        \item Файлы, связанные с 3D моделью в формате glTF, имеющие расширения \texttt{.gltf} (JSON описание 3D модели), \texttt{.bin} (бинарные данные, например, информацию об атрибутах вершин, такие как позиции, нормали, текстурные координаты и индексы треугольников) и \texttt{.png} (текстуры), расположенные в директории \texttt{assets}.
+    \end{enumerate}
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+    
+    \begin{enumerate}
+        \item Для чего предназначена библиотека Assimp, как расшифровывает аббревиатура?
+        \item Как выглядит простая модель структуры организации данных в Assimp?
+        \item Что содержит файл формата \texttt{gltf} и как организовано хранение данных в нем?
+    \end{enumerate}
+    
+    Список основной литературы:
+    \begin{enumerate}
+        \item \href{https://ravesli.com/urok-16-biblioteka-importa-3d-modelej-assimp-v-opengl/}{Урок №16. Библиотека импорта 3D-моделей Assimp в OpenGL}
+        \item \href{https://habr.com/ru/post/338436/}{Урок 3.1. Assimp // LearnOpenGL (автор оригинала: Joey de Vries; автор перевода: Megaxela)}
+        \item \href{https://habr.com/ru/articles/448220/}{Основы формата GLTF и GLB}
+        \item \href{https://github.com/KhronosGroup/glTF-Tutorials/blob/main/gltfTutorial/README.md}{glTF Tutorial}
+        \item \href{https://habr.com/ru/post/505726/}{Простой шейдер мультяшной графки в OpenGL своими руками}
+    \end{enumerate}
+    
+    Список дополнительной литературы:
+    \begin{enumerate}
+        \item \href{http://www.c-jump.com/bcc/common/Talk3/Math/GLM/GLM.html#W01_0030_matrix_transformation}{OpenGL Mathematics (GLM)}
+        \item \href{https://glm.g-truc.net/0.9.2/api/a00001.html}{OpenGL Mathematics}
+    \end{enumerate}
+    
+    \textbf{Шаг 3.} \textit{Создание трехмерной модели и текстур в Blender}
+    
+    С помощью программы Blender создайте трехмерную модель и текстуры, предварительно согласовав ее с преподавателем. Выполните экспорт трехмерной модели в формате \texttt{gltf}, а также сохраните текстуры в этой же директории, например, в формате \texttt{png}.
+    
+    Ниже представлены ссылки с уроками по созданию моделей в Blender:
+    \begin{enumerate}
+        \item \href{https://www.youtube.com/watch?v=Y0ayZ1dx78Y}{Blender первый урок Быстрый старт}
+        \item \href{https://www.youtube.com/watch?v=OoCGosEVbm0}{Моделирование трубы в Blender | Уроки для начинающих Blender}
+        \item \href{https://www.youtube.com/watch?v=vcRe0l-X4ko}{Уроки Блендер для начинающих С НУЛЯ • Уроки Blender 3.0 / 2.93 / 2.8}
+    \end{enumerate}
+    
+    Запекание текстур в Blender:
+    \begin{enumerate}
+        \item \href{https://youtu.be/YdLn_1Ec5Ws?si=3fVnNwWOcMFaDFmp}{Как запечь карту нормалей в Blender}
+        \item \href{https://www.youtube.com/watch?v=6f3Xdy_q7Bs}{Правильное запекание карты нормалей в Blender}
+        \item \href{https://www.youtube.com/watch?v=R0KfJwV72dQ}{Запекание объемных текстур Blender}
+    \end{enumerate}
+    
+    \textbf{Шаг 4.} \textit{Добавление трехмерной модели с текстурами к проекту}
+    
+    Скопируйте экспортированные из Blender файлы в папку \texttt{assets}. Отредактируйте файлы с исходным кодом программы, если необходимо, так, чтобы корректно отобразить вашу трехмерную модель.
+
+    
+\end{document}
+
