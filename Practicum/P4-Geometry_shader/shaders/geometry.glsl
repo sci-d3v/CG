@@ -63,8 +63,6 @@ void main() {
       next_direction = rotate_around_z(direction, next_angle);
       next_position += next_direction * direction_length;
       emit_vertex(next_position, next_color);
-      if(ind % 3 == 0)
-        EndPrimitive();
     }
 
     EndPrimitive();

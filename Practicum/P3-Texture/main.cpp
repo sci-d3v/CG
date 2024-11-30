@@ -202,7 +202,7 @@ int main(int argc, char* argv[]) {
 
     unsigned char* data_image =
         SOIL_load_image(path, &width, &height, &channels, SOIL_LOAD_AUTO);
-    if (*data_image) {
+    if (data_image) {
       glBindTexture(GL_TEXTURE_2D, textureID);
       // All upcoming GL_TEXTURE_2D operations now have effect on this starTextureID object
       // Set the starTextureID wrapping parameters

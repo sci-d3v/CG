@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-set(_TARGET CG_P5)
+set(_TARGET 3d_model)
 project(${_TARGET})
 
 set(CMAKE_CXX_STANDARD 17)

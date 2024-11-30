@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+\usepackage{float}
+
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+\begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №6. }}
+    
+    \textbf{{\large Создание текстуры "Геометрический паттерн" \\ с помощью процедурной генерации и вычислительного шейдера}}
+    \end{center}
+    
+    \textbf{Задание}
+    
+    Изучите проект программы и создайте шаблон геометрического паттерн согласно вашему варианту.
+    
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1.} \textit{Настройка проекта}
+    
+    Директория \texttt{CG/Practicum} содержит различные проекты. Чтобы выполнить текущее задание, откройте в отдельном окне проект, расположенный в директории \texttt{CG/Practicum/P6-Geometry\_pattern}, с помощью настроенной ИСР.
+    
+    Чтобы установить и настроить ИСР, можно воспользоваться инструкцией, расположенной в директории \texttt{CG/Practicum/P0-Getting\_started}.
+    
+    \textbf{Шаг 2.} \textit{Изучение проекта и необходимой литературы}
+    
+    Проект собирается из следующих основных файлов:
+    
+    \begin{enumerate}
+        \item Файл конфигурации, предназначенный для сборки проекта, имеющий название \texttt{CMakeCache.txt} и расположенный в рабочей директории проекта.
+        \item Файлы программы, имеющие расширения \texttt{.h} (заголовочные файлы) и \texttt{.cpp} (файлы с исходным кодом), расположенные в директории \texttt{src}.
+        \item Файлы с различными типами шейдеров, имеющие расширение \texttt{.glsl} и расположенные в директории \texttt{shaders}.
+    \end{enumerate}
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+    
+    \begin{enumerate}
+        \item Что такое вычислительный шейдер и чем он отличается от других шейдеров в OpenGL? Начиная с какой версии OpenGL поддерживаются вычислительные шейдеры?
+        
+        \item Что такое вычислительное пространство (compute space), рабочие группы (work groups), вызовы (calls)? Как формируется процесс распределения вычислений на GPU?
+        %Что такое нити (threads) и варпы (warps или  wavefronts)?
+        
+        \item Какие встроенные переменные поддерживают вычислительные шейдеры? Например, какова роль \texttt{gl\_GlobalInvocationID} и как она используется?
+        \item Как определяется размер рабочей группы \texttt{(local\_size\_x, local\_size\_y, local\_size\_z)} в вычислительном шейдере?
+        \item Что такое work group и как она связана с \texttt{gl\_WorkGroupID}?
+        
+        \item Как настроить вычислительный конвейер (compute pipeline) в OpenGL для запуска вычислительного шейдера?
+        \item Для чего нужна функция \texttt{glDispatchCompute}? Что такое barrier? Для чего они нужны?
+        
+        \item Какие происходит процесс чтения из текстуры и/или записи в текстуру данных с помощью вычислительных шейдеров?
+        
+        \item Для создания чего могут быть использованы вычислительные шейдеры?
+    \end{enumerate}
+    
+    Список основной литературы:
+    \begin{enumerate}
+        \item \href{https://www.khronos.org/opengl/wiki/Compute_Shader}{OpenGL Wiki. Compute Shader}
+        \item \href{https://steps3d.narod.ru/tutorials/compute-shaders-tutorial.html}{steps3D (А.В. Боресков). Вычислительные шейдеры в OpenGL}
+        \item \href{https://learnopengl.com/Guest-Articles/2022/Compute-Shaders/Introduction}{Learn OpenGL. Compute Shaders}
+        \item \href{https://web.engr.oregonstate.edu/~mjb/cs557/Handouts/compute.shader.1pp.pdf}{Computer Graphics Shaders (M. Bailey). OpenGL Compute Shaders}
+    \end{enumerate}
+
+    Список дополнительной литературы:
+    \begin{enumerate}
+        \item \href{https://habr.com/ru/articles/248755/}{GPU Particles с использованием Compute и Geometry шейдеров}
+        \item \href{https://www.khronos.org/registry/OpenGL/specs/gl/}{GLSL. Language Specification}
+    \end{enumerate}
+    
+    \textbf{Шаг 3.} \textit{Построение геометрического паттерна согласно варианту.}
+    
+    Согласно вашему варианту выберите геометрический паттерн (эти паттерны взяты с сайта \href{https://www.vectorstock.com}{VectorStock}), который вам необходимо построить, из папки 
+     \texttt{CG/Practicum/P6-Geometry\_pattern/task/tests}. 
+    Каждый геометрический паттерн пронумерован, т.е. это и есть вариант задания.
+    
+    Создайте повторяющийся узор изображения с помощью выбранного геометрического паттерна. Поскольку части изображения повторяются, то необходимо научиться программно рисовать, как это сделано в примере.
+    
+    Используя, полученные знания из предыдущих шагов и прошлого задания, модифицируйте файл с кодом вычислительного шейдера и, если необходимо, файлы с исходным кодом так, чтобы добиться желаемого результата.
+    
+\end{document}
