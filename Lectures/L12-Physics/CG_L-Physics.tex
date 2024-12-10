@@ -248,7 +248,7 @@
 		\]
 		Площадь единичной сферы через телесный угол и в сферической системе координат
 		\[
-			\Omega = \int_{S} d \omega 
+			S_\text{sphere} = \int_{\Omega} d \omega 
 			= 
 			\int_{0}^{2\pi}\int_{0}^{\pi} \sin \theta  d \theta d \phi
 			= 
@@ -260,7 +260,7 @@
 		\note{
 			\begin{figure}
 				\includegraphics[width=0.55\textwidth]{images/sphere_surface.png}
-				\caption{Схема расчета площади поверхности сферы}
+				\caption{Схема расчета площади сферы}
 			\end{figure}
 		}
 	\end{frame}
@@ -278,9 +278,9 @@
 	
 	\begin{frame}{Расчет телесного угла}{Solid Angle Computing}
 		
-		Телесный угол $\omega$ определяется проецируемой площадью поверхности на единичную сферу от точки.
+		Телесный угол $\omega$ --- мера пространства, определяемая проекцией заданной области поверхности на единичную сферу с центром в исходной точке.
 
-		Телесный угол образуется точкой и участком поверхности.
+		Телесный угол характеризует долю сферической поверхности, на которую проецируется рассматриваемая область.
 
 		\[
 			d \omega = d A_0 = \frac{d A \cdot \cos \theta}{ r^2}
@@ -382,20 +382,27 @@
 	\end{frame}
 
 	\begin{frame}{Расчет излученной энергии}{Computing Irradiance}
+
+		Рассчитать входящую освещенность в точки $x$ для некоторой поверхности по заданной полусфере можно следующим образом:
 		
-	Интегрируйте световой поток по полусфере
 		\[
-			E(x) = \int_{\Omega} L(x, \theta_i, \phi_i) \cos \theta_i d \omega
+			E(x) 
+			= 
+			\int_{\Omega_+} L(x, \omega_i) (n \cdot \omega_i) d \omega_i
 			=
 			\int_{0}^{2\pi}\int_{0}^{\pi / 2} 
 			L(x, \theta_i, \phi_i) 
-			\cos \theta_i \sin \theta_i d \theta d \phi
+			\cos \theta_i 
+			\sin \theta_i d \theta_i d \phi_i
 		\]
-	Таким образом, излученная энергия из определенного направления составляет
 
-	\[
-		E(x) = L(x, \theta_i, \phi_i) \cos \theta_i d \omega
-	\]
+	% Таким образом, излученная энергия из определенного направления составляет
+
+	% \[
+	% 	E(x) = L(x, \theta_i, \phi_i) \cos \theta_i  d \theta_i d \phi_i
+	% \]
+
+
 
 	\end{frame}
 
@@ -409,13 +416,15 @@
 
 		\[
 			%\text{BRDF}
-			f_r
-			(\theta_o, \phi_o, \theta_i, \phi_i) =
+			f_r (x, \theta_o, \phi_o, \theta_i, \phi_i) =
 			% f(\theta_o, \phi_o,\theta_i, \phi_i) =
-			\frac{d L(\theta_o, \phi_o)}{d E (\theta_i, \phi_i)}
+			\frac{d L(x, \theta_o, \phi_o)}{d E (x, \theta_i, \phi_i)}
+			=
+			f_r (x, \omega_o, \omega_i)
+			=
+			\frac{d L(x, \omega_o)}{d E (x, \omega_i)}
 			% переписать знаменатель через L cos d w
 		\]
-
 
 		Здесь \(\theta_i\) и \(\phi_i\) представляют углы направления входящего света (обычно относительно нормали к поверхности), а \(\theta_o\) и \(\phi_o\) представляют углы направления исходящего света. 
 
@@ -435,11 +444,21 @@
 		Излученность в направлении наблюдения при условии всех входящих световых потоков. 
 		\[
 			L(x, \theta_o, \phi_o) = 
-			\int_{\Omega} 
-			%\text{BRDF}
-			f_r(\theta_o, \phi_o, \theta_i, \phi_i) 
+			\int_{0}^{2\pi}\int_{0}^{\pi / 2}
+			f_r(x, \theta_o, \phi_o, \theta_i, \phi_i) 
 			L(x, \theta_i, \phi_i) 
-			\cos \theta_i d \omega
+			\cos \theta_i 
+			\sin \theta_i d \theta_i d \phi_i
+		\]
+		или
+		\[
+			L(x, \omega_o) 
+			=
+			\int_{\Omega_+} 
+			f_r(x, \omega_o, \omega_i) 
+			L(x, \omega_i) 
+			(n \cdot \omega_i)
+			d \omega_i
 		\]
 		Что пропорционально яркости пикселя для этого луча.
 
