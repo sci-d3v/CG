@@ -18,11 +18,18 @@
 
 \title[Введение в КГ]{Введение в компьютерную графику}
 \author[Быковских Д.А.]{Быковских Дмитрий Александрович}
-\date{07.09.2024}
+\date{06.09.2025}
 
 \begin{document}
 	\begin{frame}
 		\titlepage
+
+		\note{
+			\begin{figure}
+				\includegraphics[width=0.8\textwidth]{images/cg_work_meme.png}
+				\caption{Изображение для привлечения внимания}
+			\end{figure}
+		}
 	\end{frame}
 	%\section{Обзор}
 	\begin{frame}{Содержание}
@@ -34,45 +41,45 @@
 			\item
 			Аппаратные средства, связанные с выводом изображения
 			\item 
-			Библиотеки визуализации
+			Терминология
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Что такое компьютерная графика?}
-		Компьютерная графика --- одно из направлений информационных технологий, которое занимается созданием, редактированием и визуализацией \textbf{графических изображений}.
-		
-		Спектр применений:
-		
-		\begin{columns}
-			
-			\begin{column}{0.5\textwidth}
-				\begin{itemize}
-				\item
-				Разработка игр (виртуальный мир, персонажи, эффекты)
-				
-				\item
-				Визуализация данных (диаграммы, графики)
-				\item
-				Дизайн (логотипы, баннеры, упаковки, интерфейсы)
-				\item
-				Симуляция и моделирование (создание виртуальных сред для тестирования и исследования различных сценариев)
-				
-			\end{itemize}
-			\end{column}
-			\begin{column}{0.5\textwidth}
-				\begin{itemize}
-				\item
-				Анимация (фильмы, видеоролики, реклама)
-				\item
-				Медицинская визуализация (модели органов, тканей и других частей тела, )
-				\item
-				Архитектурное проектирование (модели жилых районов, зданий, интерьеров)
-				\item
-				Редактирование фотографий и видеороликов (улучшение качества изображений)
-			\end{itemize}
-			\end{column}
-		
-		\end{columns}
-		
+	\begin{frame}{Что такое компьютерная графика (КГ)?}
+		Компьютерная графика --- междисциплинарная область информатики, изучающая математические и вычислительные основы генерации, обработки, представления и визуализации изображений и геометрической информации с использованием вычислительных систем.
+
+		% Компьютерная графика --- одно из направлений информационных технологий, которое занимается созданием, редактированием и визуализацией \textbf{графических изображений}.
+		{
+			Спектр применений:
+			\vskip-4mm
+			\begin{columns}[t]
+				\begin{column}{0.48\textwidth}
+					{\footnotesize
+						\begin{itemize}
+							\item Разработка игр (виртуальный мир, персонажи, эффекты)
+							\item Визуализация данных (диаграммы, графики)
+							\item Дизайн (логотипы, баннеры, упаковки, интерфейсы)
+							\item Симуляция и моделирование (виртуальные среды для тестирования)
+						\end{itemize}
+					}
+				\end{column}
+				\begin{column}{0.48\textwidth}
+					{\footnotesize
+						\begin{itemize}
+							\item Анимация (фильмы, видеоролики, реклама)
+							\item Медицинская визуализация (модели органов, тканей)
+							\item Архитектурное проектирование (модели зданий, интерьеров)
+							\item Редактирование фото и видео (улучшение качества)
+							\item и многое другое
+						\end{itemize}
+					}
+				\end{column}
+			\end{columns}
+		}
+		\note{
+
+		Машинная графика (Computer graphics, ГОСТ 27459-87) --- совокупность методов и приемов для преобразования при помощи ЭВМ данных в графическое представление или графического представления в данные.
+
+		}
 		
 		\if 0
 		3D-моделирование и анимация: Создание трехмерных моделей объектов, персонажей и сцен, а также их анимация для использования в фильмах, играх, визуализации архитектурных проектов и многих других областях.
@@ -100,54 +107,74 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-		
-		\centering
-		\textbf{Основные направления}
+	\begin{frame}{Основные направления}
 		
 		\begin{columns}
 			\begin{column}{0.3\textwidth}
 				
-				Computer Vision
-				
-				Machine Learning
-				
-				Data Mining
-				\begin{figure}
-				\includegraphics[width=\textwidth]{images/Computer_vision.png}
-				\caption{Семейная пара}
-				\end{figure}
-			\end{column}
-			
-			\begin{column}{0.4\textwidth}
-				
-				Computer Graphics
-				
-				Computer-Generated Imagery
-				
-				Realtime Processing
-				\begin{figure}
-				\includegraphics[width=\textwidth]{images/Utah_teapot.png}
-				\caption{Чайник Юта}
-				\end{figure}
-				
-			\end{column}
-			
-			\begin{column}{0.3\textwidth}
-				
-				Image Processing
+				\textbf{Image Processing}
 				
 				Image Compression
 				
 				Noise Reduction
 				\begin{figure}
 				\includegraphics[width=\textwidth]{images/Lenna_test_image.png}
-				\caption{Лена Сёдерберг}
+				\caption{Эталонное изображение (Söderberg Lenna)}
+				\end{figure}
+				
+			\end{column}
+
+
+			\begin{column}{0.3\textwidth}
+				
+				\textbf{Neural Networks}
+
+				Computer Vision
+				
+				Machine Learning
+				
+				Deep Learning
+				
+				Data Mining				
+
+				\vspace{2.5mm}
+
+				\begin{figure}
+				\includegraphics[width=\textwidth]{images/Computer_vision.png}
+				\caption{Применение нейронных сетей (семейная пара)}
+				\end{figure}
+			\end{column}
+			
+			\begin{column}{0.4\textwidth}
+				
+				\textbf{Rendering}
+				
+				Computer-Generated Imagery
+				
+				RealTime Processing
+				\begin{figure}
+				\includegraphics[width=\textwidth]{images/Utah_teapot.png}
+				\caption{Классическая модель рендера (Newell teapot или чайник Юта)}
 				\end{figure}
 				
 			\end{column}
 		\end{columns}
-	\end{frame}
+
+		\note{
+			Самые популярные направления на сегодняшний день: 
+			\begin{itemize}
+				\item рендеринг;
+				\item анимация и симуляция;
+				\item геометрическое моделирование;
+				\item машинное обучение и ИИ;
+				\item виртуальная и дополненная реальность;
+				\item научная визуализация;
+				\item вычислительная фотография. 
+			\end{itemize}
+
+		}
+
+		\end{frame}
 \if 0	
 	\begin{frame}
 	%https://iasl.uni-muenchen.de/links/GCA-IV.2e.html
@@ -177,7 +204,7 @@
 	
 	\section{История развития. Интересные факты}
 	
-	\begin{frame}{Одна из первых компьютерных игр --- Spacewar}{1962 г.}
+	\begin{frame}{Spacewar (1962 г.)}{Одна из первых компьютерных игр}
 	
 	\begin{columns}
 		
@@ -185,13 +212,13 @@
 			
 			%Название: Spacewar!
 			
-			Жанр: Shoot’em up, космический симулятор
+			\textbf{Жанр:} Shoot’em up, космический симулятор
 			
-			Авторы: Steve Russell, Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner
+			\textbf{Авторы:} Steve Russell, Martin Graetz, Wayne Wiitanen, Bob Saunders, Steve Piner
 			
-			%Платформа: DEC PDP-1
+			\textbf{Платформа:} DEC PDP-1
 			
-			Длительность разработки: 200 Чч
+			\textbf{Время разработки:} 200 Чч
 			
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -209,30 +236,27 @@
 		Работает с помощью электронного пучка, испускаемого анодом и фосфорного экрана, выполняющего роль катода. 
 		Имеет крупные размеры, высокое энергопотребление и вес, но обеспечивает хорошее качество изображения и высокую частоту обновления.
 		
-		LCD (Liquid Crystal Display или жидкокристаллический дисплей)
+		% LCD (Liquid Crystal Display или жидкокристаллический дисплей)
 		
-		Основан на управлении светом через жидкие кристаллы с подсветкой. Более тонкий, легкий, с меньшим энергопотреблением, но может иметь ограничения по углам обзора и контрасту.
+		% Основан на управлении светом через жидкие кристаллы с подсветкой. Более тонкий, легкий, с меньшим энергопотреблением, но может иметь ограничения по углам обзора и контрасту.
 		
-		OLED (Organic Light-Emitting Diode или органический светодиод)
+		% OLED (Organic Light-Emitting Diode или органический светодиод)
 		
-		Использует органические светодиоды для создания изображения. Тонкий, энергоэффективный, обеспечивает отличное качество изображения, особенно в темных сценах, но может быть подвержен эффекту выгорания пикселей (особенно на статичных изображениях).
+		% Использует органические светодиоды для создания изображения. Тонкий, энергоэффективный, обеспечивает отличное качество изображения, особенно в темных сценах, но может быть подвержен эффекту выгорания пикселей (особенно на статичных изображениях).
 	}
 	
 	\end{frame}
 
-\begin{frame}{Одна из первых компьютерных анимаций}
-	{1968 г.}
+\begin{frame}{Кошечка (1968 г.)}{Одна из первых компьютерных анимаций}
 	
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			
-			Название: Кошечка
+			\textbf{Авторы:} Н.Н. Константинов, В. Минахин, В. Понаморенко, А. Скуридин, В. Журкин
 			
-			Авторы: Н.Н. Константинов, В. Минахин, В. Понаморенко, А. Скуридин, В. Журкин
+			\textbf{Платформа:} БЭСМ-4 и алфавитно-цифровой принтер
 			
-			Платформа: БЭСМ-4 и алфавитно-цифровой принтер
-			
-			Реализация: движение кошки описаны дифференциальными уравнениями
+			\textbf{Реализация:} движение кошки описаны дифференциальными уравнениями
 			
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -246,12 +270,12 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Чайник Юта (Newell teapot)}{1975 г.}
+\begin{frame}{Чайник Юта (1975 г.)}{Newell teapot}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{figure} 
 				\includegraphics[width=\textwidth]{images/Utah_teapot_model.png}
-				\caption {Состоит из 32-хкубических поверхностей Безье}
+				\caption {Состоит из 32 кубических поверхностей Безье}
 			\end{figure}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -271,13 +295,13 @@
 
 \end{frame}
 
-\begin{frame}{Silicon Graphics Inc. (SGI)}{1982 г.}
+\begin{frame}{Silicon Graphics Inc. (SGI, 1982 г.)}{}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			
-			Описание: Разработка графических станций (Indigo, Indy и др.) и ПО (SGI IRIX и др.) для визуализации
+			\textbf{Описание:} Разработка графических станций (Indigo, Indy и др.) и ПО (SGI IRIX и др.) для визуализации
 			
-			Основатель: Джим Кларк
+			\textbf{Основатель:} Джим Кларк
 			
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -326,7 +350,7 @@
 \end{frame}
 
 
-\begin{frame}{Первая 3D видеокарта}{1996 г.}
+\begin{frame}{Первая 3D видеокарта (1996 г.)}{}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			
@@ -350,21 +374,21 @@
 \begin{frame}{Характеристики видеокарты 3DFX Voodoo1}{1996 г.}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-			Разработчик: Diamond
+			\textbf{Разработчик:} Diamond
 			
-			Шины I/O: PCI/VGA
+			\textbf{Шины I/O:} PCI/VGA
 			
-			Память: 4 MB EDO DRAM
+			\textbf{Память:} 4 MB EDO DRAM
 			
-			Тех процесс: 500 nm
+			\textbf{Тех процесс:} 500 nm
 			
-			Частота min/max: 45/50 MHz
+			\textbf{Частота min/max:} 45/50 MHz
 			
-			DirectX: DX5
+			\textbf{API:}  DX5 (DirectX 5)
 			
-			Цена: 300\$
+			\textbf{Цена:} 300\$
 			
-			Эффекты: texture modulation, Z-buffering, Bi-linear texture filtering, anti-aliasing etc.
+			\textbf{Эффекты:} texture modulation, Z-buffering, Bi-linear texture filtering, anti-aliasing etc.
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{figure} 
@@ -398,7 +422,7 @@
 
 
 \begin{frame}{Характеристики видеокарты}{Графический процессор (видеочип)}
-	Число транзисторов, трлн.
+	Число транзисторов, млрд.
 	
 	Техпроцесс, нм
 	
@@ -423,11 +447,11 @@
 	
 	\note{
 	
-		Описание самой мощной игровой видекарты на 2022 г.
+		Описание самой мощной игровой видекарты на 2025 г. NVIDIA GeForce RTX 5090
 
-		https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c3889
+		https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216
 
-		С различными характеристиками можно ознакомиться здесь
+		С различными характеристиками можно ознакомиться
 
 		https://www.thg.ru/graphic/graphic\_card\_faq\_ii/index.html
 		
@@ -449,7 +473,7 @@
 		Работа TMU заключается в применении текстурных операций над пикселями.
 
 		{\small
-		Блоки растровых операций (Raster Operator Unit, ROP)
+		Блоки растровых операций (Raster Operations Pipeline, ROP)
 		}
 
 		Процессоры растровых операций отвечают за запись пиксельных данных в память. Скорость, с которой выполняется эта операция, является скоростью заполнения (fill rate). 
@@ -463,6 +487,7 @@
 \begin{frame}{Характеристики видеокарты}{Графическая память и прочие атрибуты}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
+
 			\textbf{Графическая память}
 			
 			Разрядность шины, бит
@@ -472,6 +497,8 @@
 			Тактовая частота, ГГц
 			
 			Объем, Tбайт
+
+			\vspace{25mm}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\textbf{Другие атрибуты}
@@ -497,12 +524,19 @@
 \end{frame}
 
 
-\begin{frame}{ Характеристики видеокарты}{Floating Point (FP)}
+\begin{frame}{ Характеристики видеокарты}{Memory Hierarchy and Floating Point (FP)}
+	\begin{figure}
+		\href{https://www.researchgate.net/profile/M-Clark/publication/51927898/figure/fig4/AS:668607537233921@1536419867027/A-schematic-of-the-memory-hierarchy-of-the-Nvidia-Fermi-architecture-with-the-peak.png}{
+			\includegraphics[width=0.5\textwidth]{images/Nvidia_Fermi_architecture_memory.png}}
+		\caption {Nvidia Fermi Architecture Memory}
+	\end{figure}
+	
+	\note{
 	\begin{figure} 
 		\includegraphics[width=\textwidth]{images/Floating_Point_structure.png}
 		\caption {Структура чисел с плавающей точкой}
 	\end{figure}
-	
+	}
 \end{frame}
 
 \begin{frame}{Характеристики видеокарты}{Бенчмарки (benchmark)} 
