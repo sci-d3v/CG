@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[]{hyperref}
+
+\usepackage{float}
+
+\begin{document}
+\fontsize{14pt}{16pt}\selectfont
+\begin{center}
+    \textbf{{\Large Компьютерная графика}}
+    
+    \textbf{{\large Лабораторная работа №4. }}
+    
+    \textbf{{\large Построение изображения с помощью геометрического шейдера}}
+    \end{center}
+    
+    
+    \textbf{Задание}
+    
+    Изучите проект программы и создайте изображение (фрактал) согласно вашему варианту, модифицировав исходный проект.
+    
+    \textbf{Ход выполнения работы}
+    
+    \textbf{Шаг 1.} \textit{Настройка проекта}
+    
+    Директория "CG/Practicum" содержит различные проекты. Чтобы выполнить текущее задание, откройте в отдельном окне проект, расположенный \textquotedbl CG/Practicum/P4-Geometry\_shader\textquotedbl, с помощью настроенной ИСР.
+
+    Чтобы установить и настроить ИСР, можно воспользоваться инструкцией, расположенной в директории 
+    \textquotedbl CG/Practicum/P0-Getting\_started\textquotedbl .
+    
+    \textbf{Шаг 2.} \textit{Изучение проекта и необходимой литературы}
+    
+    Проект собирается из следующих основных файлов:
+    
+    \begin{enumerate}
+        \item Файл конфигурации, предназначенный для сборки проекта, имеющий название \textquotedbl CMakeCache.txt\textquotedbl~и расположенный в рабочей директории проекта.
+        \item Файл с исходным кодом программы, имеющий название \textquotedbl main.cpp\textquotedbl~и расположенный в рабочей директории проекта.
+        \item Файлы с различными типами шейдеров, имеющие расширение \textquotedbl glsl\textquotedbl~и расположенные в папке \textquotedbl shaders\textquotedbl.
+    \end{enumerate}
+    
+    Изучите указанную литературу и сделайте краткий конспект изученного материала, как минимум содержащий развернутые ответы на следующие контрольные вопросы:
+
+    \begin{enumerate}
+        \item 
+        В чем заключается назначение геометрического шейдера?
+        \item 
+        Какие типы примитивов можно указать в качестве входных и выходных данных в геометрическом шейдере?
+        \item 
+        Какие встроенные переменные используются в геометрическом шейдере?
+        \item 
+        Каким образом передается цвет по графическому конвейеру от одного шейдера к другому?
+        \item 
+        Какие команды используются для создания вершинных данных в геометрическом шейдере?
+    \end{enumerate}
+
+    Список основной литературы:
+    \begin{enumerate}
+        \item \href{https://habr.com/ru/articles/350782/}{Урок 4.9 — Геометрический шейдер // LearnOpenGL (автор оригинала: Joey de Vries; автор перевода: Megaxela)}
+        \item \href{https://www.khronos.org/opengl/wiki/Geometry_Shader}{Geometry Shader}
+        \item \href{https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview}{Rendering Pipeline Overview}
+        \item \href{https://ravesli.com/urok-27-geometricheskie-shejdery-v-opengl/}{Урок №27. Геометрические шейдеры в OpenGL}
+    \end{enumerate}
+   
+    \textbf{Шаг 3.} \textit{Построение изображения согласно варианту}
+    
+    Выберете фрактал, который вам необходимо программно нарисовать, согласно вашему варианту из списка, расположенного в файле \textquotedbl CG/Practicum/P4-Geometry\_shader/task/tests.txt\textquotedbl.
+
+    Используя, полученные знания из предыдущих шагов и прошлого задания, модифицируйте файлы с исходным кодом так, чтобы в файле с исходным кодом и геометрическом шейдере был расположен алгоритм построения фрактала.
+    
+\end{document}
