@@ -7,6 +7,7 @@
     "git.openRepositoryInParentFolders": "never",
     "cmake.configureOnOpen": false,
     "files.associations": {
+      "*.glsl": "glsl",
       "array": "cpp",
       "atomic": "cpp",
       "bit": "cpp",
@@ -72,6 +73,8 @@
       "thread": "cpp",
       "cinttypes": "cpp",
       "typeinfo": "cpp",
-      "variant": "cpp"
+      "variant": "cpp",
+      "fstream": "cpp",
+      "iostream": "cpp"
     },
 }

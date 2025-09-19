@@ -1,13 +1,19 @@
-cmake_minimum_required(VERSION 3.14)
-project(CG_Test)
-set(CMAKE_CXX_STANDARD 17)
+# cmake_minimum_required(VERSION 3.14)
+# set(CMAKE_CXX_STANDARD 17)
 
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
-configure_file(${CMAKE_SOURCE_DIR}/shaders/vertex.glsl ${CMAKE_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
-configure_file(${CMAKE_SOURCE_DIR}/shaders/fragment.glsl ${CMAKE_BINARY_DIR}/shaders/fragment.glsl COPYONLY)
+project(CG_Test)
+
+copy_files(shaders *)
+
+set(GLSL_SOURCE_FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/shaders/fragment.glsl
+        ${CMAKE_CURRENT_SOURCE_DIR}/shaders/vertex.glsl)
+
+add_custom_target(CompileShaders DEPENDS ${GLSL_SOURCE_FILES})
+# Ensure shaders are compiled before the executable is run
 
 add_executable(CG_Test main.cpp)
-
+add_dependencies(CG_Test CompileShaders)
     
 if(UNIX AND NOT APPLE)
     message(STATUS "Linux")
