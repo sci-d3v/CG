@@ -75,6 +75,6 @@ vec4 Star(vec2 pos, vec2 p0, float r, float R, float angle, vec4 color,
 
 void main() {
   vec2 position = gl_FragCoord.xy / u_resolution.xy;
-  gl_FragColor = Star(position, vec2(0.5), 0.2, 0.5, 0.25 * PI,
+  gl_FragColor = Star(position, vec2(0.5), 0.25*(3.-sqrt(5.))*0.5, 0.25, 0.5 * PI,
                       vec4(1, 0, 0, 1), vec4(0, 0, 1, 1));
 }

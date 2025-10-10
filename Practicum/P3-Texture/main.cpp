@@ -12,9 +12,12 @@
 
 // Define a struct to hold both position and color for each vertex
 struct Vertex {
+  // [-1,1]
   glm::vec3 position;
+  // [0,1]
   glm::vec3 color;
-  glm::vec2 texture_coordinates;
+  // [0,1]
+  glm::vec2 textureCoordinates;
 };
 
 // Now define the vertices with their positions and colors
