@@ -22,7 +22,7 @@
 
 \title[Проецирование]{Проецирование}
 \author[Быковских Д.А.]{Быковских Дмитрий Александрович}
-\date{05.10.2024}
+\date{04.10.2025}
 
 \begin{document}
 	\begin{frame}
@@ -105,9 +105,9 @@
 			
 			Параметрическое уравнение прямой
 			\[
-				\begin{cases} x=x_0+l_xt \\
-					y=y_0+l_yt \\
-					z=z_0+l_zt \\
+				\begin{cases} x=x_0+tl_x \\
+					y=y_0+tl_y \\
+					z=z_0+tl_z \\
 					\end{cases}
 			\]
 			}
@@ -217,32 +217,32 @@
 
 		\[
 			\begin{bmatrix}
+					1 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 1 \\
+			\end{bmatrix}
+			\qquad
+			\begin{bmatrix}
+				1 & 0 & 0 & 0 \\
 				0 & 0 & 0 & 0 \\
-				0 & 1 & 0 & 0 \\
 				0 & 0 & 1 & 0 \\
 				0 & 0 & 0 & 1 \\
-			 \end{bmatrix}	
-			 \qquad
-		 \begin{bmatrix}
-			1 & 0 & 0 & 0 \\
-			0 & 0 & 0 & 0 \\
-			0 & 0 & 1 & 0 \\
-			0 & 0 & 0 & 1 \\
-		 \end{bmatrix}
-		 \qquad
-		 \begin{bmatrix}
-			 1 & 0 & 0 & 0 \\
-			 0 & 1 & 0 & 0 \\
-			 0 & 0 & 0 & 0 \\
-			 0 & 0 & 0 & 1 \\
-		 \end{bmatrix}
+			\end{bmatrix}
+			\qquad
+			\begin{bmatrix}
+					0 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 \\
+					0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 1 \\
+			\end{bmatrix}			
 	 \]
 
 		\note{
 			\begin{figure} 
 				\includegraphics[width=0.75\textwidth]{images/technical_drawing.jpg}
-			\caption{Пример чертежа}
-		\end{figure}
+				\caption{Пример чертежа}
+			\end{figure}
 		}
 	
 	\end{frame}
@@ -258,55 +258,78 @@
 			\item Триметрическая проекция. \\
 			В плоскости проекции все 3 угла между собой различны.
 		\end{itemize}
-	\end{frame}
+		
+		Примечание: \\
+		Аксонометрия в переводе с греческого означает измерение по осям.
+	% \end{frame}
 	
-	\note{
-		Аксонометрия в переводе с греческого обозначает измерение по осям.
+	\note{		
+		\begin{center}
+			Матрица аксонометрического проецирования
+		\end{center}
 		\[
 			M_{r,y}(\phi) M_{r,x}(\theta) M_t =
 		\]
 		\[
 			= 
-		 \begin{bmatrix}
-			 \cos \phi & 0 & - \sin \phi & 0 \\
-			 0 & 1 & 0 & 0 \\
-			 \sin \phi & 0 & \cos \phi & 0 \\
-			 0 & 0 & 0 & 1 \\
-		 \end{bmatrix}	
-		 \begin{bmatrix}
-			 1 & 0 & 0 & 0 \\
-			 0 & \cos \theta  & \sin \theta & 0 \\
-			 0 & -\sin \theta & \cos \theta & 0 \\
-			 0 & 0 & 0 & 1 \\
-		 \end{bmatrix}	
-		 \begin{bmatrix}
-			 1 & 0 & 0 & 0 \\
-			 0 & 1 & 0 & 0 \\
-			 0 & 0 & 0 & 0 \\
-			 0 & 0 & 0 & 1 \\
-		 \end{bmatrix}	
-		 =
-	 \]
-	 \[
+			\begin{bmatrix}
+				\cos \phi & 0 & - \sin \phi & 0 \\
+				0 & 1 & 0 & 0 \\
+				\sin \phi & 0 & \cos \phi & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{bmatrix}	
+			\begin{bmatrix}
+				1 & 0 & 0 & 0 \\
+				0 & \cos \theta  & \sin \theta & 0 \\
+				0 & -\sin \theta & \cos \theta & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{bmatrix}	
+			\begin{bmatrix}
+				1 & 0 & 0 & 0 \\
+				0 & 1 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{bmatrix}	
+		\]
+
+		\begin{center}
+			Расчет координат вершин после аксонометрического проецирования
+		\end{center}
+		\[
+			\begin{bmatrix}
+				p_x^* \\
+				p_y^*	\\
+				p_z^* \\
+				1			\\
+			\end{bmatrix}^T
 			= 
-		 \begin{bmatrix}
-			 \cos \phi & \sin \phi \sin \theta & 0 & 0 \\
-			 0 & \cos \theta & 0 & 0 \\
-			 \sin \phi & -\cos \phi \sin \theta & 0 & 0 \\
-			 0 & 0 & 0 & 1 \\
-		 \end{bmatrix}
-	 \]
+			\begin{bmatrix}
+				p_x \\
+				p_y	\\
+				p_z \\
+				1		\\
+			\end{bmatrix}^T	
+			\begin{bmatrix}
+				\cos \phi & \sin \phi \sin \theta & 0 & 0 \\
+				0 & \cos \theta & 0 & 0 \\
+				\sin \phi & -\cos \phi \sin \theta & 0 & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{bmatrix}
+		\]
 
 	}
+	\end{frame}
 
 	% \section{Преобразования наблюдения}
 	\begin{frame}{Аксонометрическое проецирование}
 
 		Коэффициенты искажения
 		\[
-			f_i = \sqrt{f_{i,x}^2+f_{i,y}^2+f_{i,z}^2}
+			f_i = \sqrt{f_{x,i}^2+f_{y,i}^2+f_{z,i}^2},
 		\]
+		где $i \in \{x, y, z\}$.
 
+		Система уравнений, состоящая из коэффициентов искажения
 		\[
 		\begin{cases}
 			f_x^2 = \cos^2 \phi + \sin^2 \phi \sin^2 \theta \\
@@ -315,22 +338,28 @@
 		\end{cases}	
 		\]
 
-		Для триметрической проекции
-		\[
-			f_x^2 \neq f_y^2 \neq f_z^2
-		\]
-		Для диметрической проекции
-		\[
-			f_x^2 = f_y^2 \neq f_z^2
-		\]
-
-		Для изометрической проекции
-		\[
-			f_x^2 = f_y^2 = f_z^2
-		\]
 		
 		\note{
-			коэффициенты сдвига
+			Для триметрической проекции
+			\[
+				f_x^2 \neq f_y^2 \neq f_z^2
+			\]
+			Для диметрической проекции
+			\[
+				f_x^2 = f_y^2 \neq f_z^2
+			\]
+	
+			Для изометрической проекции
+			\[
+				f_x^2 = f_y^2 = f_z^2
+			\]
+
+
+			Геометрическая интерпретация
+
+			Коэффициенты искажения возникают из-за того, что трёхмерная система координат поворачивается в пространстве перед проецированием на плоскость. Это приводит к сокращению видимых длин всех осей.
+
+			%Коэффициенты сдвига создают деформацию формы без изменения длин базовых векторов, смещая точки пропорционально их координатам.
 		}
 		
 	\end{frame}
@@ -338,6 +367,7 @@
 
 		\begin{columns}
 			\begin{column}{0.45\textwidth}
+				Нахождение углов Эйлера
 		\[
 			\begin{cases}
 				f_x^2 = \cos^2 \phi + \sin^2 \phi \sin^2 \theta \\
@@ -467,25 +497,53 @@
 		\end{columns}
 		\note{
 			\begin{center}
-				Смещение на плоскости проекции
+				Смещение координат вершин на плоскости проекции
 			\end{center}
 			\[
 				\begin{cases}
-					p_x^{*} = p_x + t_x \\
-					p_y^{*} = p_y + t_y \\
+					p_x^{*} = p_x + t_x p_z \\
+					p_y^{*} = p_y + t_y p_z \\
+					p_z^{*} = 0 \\
 				\end{cases}
 			\]
-	
-			Матрица смещения имеет вид:
+		\begin{center}
+			Цепочка преобразований
+		\end{center}
 			\[
-				M_t = 
 				\begin{bmatrix}
-					1 & 0 & 0  \\
-					0 & 1 & 0  \\
-					t_x & t_y & 1 \\
+					p_x^* \\
+					p_y^*	\\
+					p_z^* \\
+					1			\\
+				\end{bmatrix}^T
+				=
+				\begin{bmatrix}
+					p_x \\
+					p_y	\\
+					p_z \\
+					1		\\
+				\end{bmatrix}^T	
+				\begin{bmatrix}
+					1 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 \\
+					t_x & t_y & 1 & 0 \\
+					0 & 0 & 0 & 1 \\
 				\end{bmatrix}
+				\begin{bmatrix}
+					1 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 0 \\
+					0 & 0 & 0 & 1 \\
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					p_x + t_x p_z \\
+					p_y + t_y p_z \\
+					0 \\
+					0	\\
+				\end{bmatrix}^T
 			\]
-		
+					
 		}
 	\end{frame}
 
@@ -517,6 +575,9 @@
 	\end{columns}
 
 			\note{
+				\begin{center}
+					Цепочка преобразований
+				\end{center}
 				\[
 					\begin{bmatrix}
 						p_x^* \\
@@ -572,7 +633,7 @@
 					\begin{bmatrix}
 						1 & 0 & 0 & p \\
 						0 & 1 & 0 & q \\
-						0 & 0 & 1 & r \\
+						0 & 0 & 0 & r \\
 						0 & 0 & 0 & 1 \\
 					\end{bmatrix}	
 					\qquad
@@ -592,7 +653,6 @@
 						1			\\
 					\end{bmatrix}^T
 				\]
-
 			}
 	\end{frame}
 	\begin{frame}{Перспективное проецирование}

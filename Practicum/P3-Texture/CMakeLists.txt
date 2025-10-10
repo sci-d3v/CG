@@ -1,24 +1,28 @@
-cmake_minimum_required(VERSION 3.20)
-project(CG_P3)
+set(CURRENT_PROJECT cg_texture)
+project(${CURRENT_PROJECT})
 
-set(CMAKE_CXX_STANDARD 17)
+COPY_FILES_TO_BUILD(textures *)
+COPY_FILES_TO_BUILD(shaders glsl)
 
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/shaders)
-configure_file(${CMAKE_SOURCE_DIR}/shaders/vertex.glsl ${CMAKE_BINARY_DIR}/shaders/vertex.glsl COPYONLY)
-configure_file(${CMAKE_SOURCE_DIR}/shaders/fragment.glsl ${CMAKE_BINARY_DIR}/shaders/fragment.glsl COPYONLY)
+file(GLOB_RECURSE SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+add_executable(${CURRENT_PROJECT} ${SRCS})
 
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/textures)
-configure_file(${CMAKE_SOURCE_DIR}/textures/window_star.png ${CMAKE_BINARY_DIR}/textures/window_star.png COPYONLY)
-configure_file(${CMAKE_SOURCE_DIR}/textures/planets.png ${CMAKE_BINARY_DIR}/textures/planets.png COPYONLY)
+GET_FILES_BY_EXTENSION(shaders glsl GLSL_SOURCE_FILES)
+add_custom_target(${CURRENT_PROJECT}_compile_shaders DEPENDS ${GLSL_SOURCE_FILES})
+add_dependencies(${CURRENT_PROJECT} ${CURRENT_PROJECT}_compile_shaders)
 
-add_executable(CG_P3 main.cpp)
+target_include_directories(${CURRENT_PROJECT} PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ..  # adds practicum/ to the include path
+)
 
+target_link_libraries(${CURRENT_PROJECT} m SOIL)
 if(UNIX AND NOT APPLE)
-    message(STATUS "Linux")
-    target_link_libraries(CG_P3 m SOIL glfw GLEW GL)
+    message(STATUS "Linux platform")
+    target_link_libraries(${CURRENT_PROJECT} glfw GLEW GL)
+elseif(WIN32)
+    message(STATUS "Windows platform")
+    target_link_libraries(${CURRENT_PROJECT} glu32 opengl32 glfw3 glew32)
 else()
-    message(STATUS "Windows")
-    target_link_libraries(CG_P3 m SOIL glu32 opengl32 glfw3 glew32)
+    message(SEND_ERROR "The project supports only Linux and Windows platforms")
 endif()
-
-

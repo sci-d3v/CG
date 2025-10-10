@@ -1,20 +1,27 @@
-cmake_minimum_required(VERSION 3.20)
-project(cg_geometric_primitives)
+set(CURRENT_PROJECT cg_geometric_primitives)
+project(${CURRENT_PROJECT})
 
-copy_files(shaders *)
-get_file_list(shaders glsl GLSL_SOURCE_FILES)
+COPY_FILES_TO_BUILD(shaders glsl)
 
-add_custom_target(CompileShaders DEPENDS ${GLSL_SOURCE_FILES})
-# Ensure shaders are compiled before the executable is run
+# Get shader files for dependency tracking
+GET_FILES_BY_EXTENSION(shaders glsl GLSL_SOURCE_FILES)
 
-add_executable(cg_geometric_primitives geometric_primitives.cpp)
-add_dependencies(cg_geometric_primitives CompileShaders)
+# Create custom target for shader compilation
+add_custom_target(${CURRENT_PROJECT}_compile_shaders DEPENDS ${GLSL_SOURCE_FILES})
 
-    
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
+# Create executable
+add_executable(${CURRENT_PROJECT} geometric_primitives.cpp)
+add_dependencies(${CURRENT_PROJECT} ${CURRENT_PROJECT}_compile_shaders)
+
+# Platform-specific libraries
 if(UNIX AND NOT APPLE)
-    message(STATUS "Linux")
-    target_link_libraries(cg_geometric_primitives m glfw GLEW GL SOIL)
+    message(STATUS "Linux platform")
+    target_link_libraries(${CURRENT_PROJECT} m glfw GLEW GL SOIL)
+elseif(WIN32)
+    message(STATUS "Windows platform")
+    target_link_libraries(${CURRENT_PROJECT} m SOIL glu32 opengl32 glfw3 glew32)
 else()
-    message(STATUS "Windows")
-    target_link_libraries(cg_geometric_primitives m SOIL glu32 opengl32 glfw3 glew32)
+    message(SEND_ERROR "The project supports only Linux and Windows platforms")
 endif()
