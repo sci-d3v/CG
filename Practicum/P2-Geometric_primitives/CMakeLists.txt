@@ -1,4 +1,5 @@
-set(CURRENT_PROJECT cg_geometric_primitives)
+get_filename_component(CURRENT_PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(TOLOWER "${CURRENT_PROJECT}" CURRENT_PROJECT)
 project(${CURRENT_PROJECT})
 
 COPY_FILES_TO_BUILD(shaders glsl)
