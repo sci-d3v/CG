@@ -14,11 +14,10 @@ add_dependencies(${CURRENT_PROJECT} ${CURRENT_PROJECT}_compile_shaders)
 
 target_include_directories(${CURRENT_PROJECT} PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../common
     ..  # adds practicum/ to the include path
 )
 
-target_link_libraries(${CURRENT_PROJECT} common m SOIL assimp)
+target_link_libraries(${CURRENT_PROJECT} m SOIL assimp)
 if(UNIX AND NOT APPLE)
     message(STATUS "Linux platform")
     target_link_libraries(${CURRENT_PROJECT} glfw GLEW GL)

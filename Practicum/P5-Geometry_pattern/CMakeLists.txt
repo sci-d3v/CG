@@ -1,53 +1,28 @@
-cmake_minimum_required(VERSION 3.14)
+get_filename_component(CURRENT_PROJECT ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(TOLOWER "${CURRENT_PROJECT}" CURRENT_PROJECT)
+project(${CURRENT_PROJECT})
 
-project(geometry_pattern)
+COPY_FILES_TO_BUILD(shaders *)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+file(GLOB_RECURSE SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+add_executable(${CURRENT_PROJECT} ${SRCS})
 
-# Вывод информации о текущем типе сборки
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+GET_FILES_BY_EXTENSION(shaders glsl GLSL_SOURCE_FILES)
+add_custom_target(${CURRENT_PROJECT}_compile_shaders DEPENDS ${GLSL_SOURCE_FILES})
+add_dependencies(${CURRENT_PROJECT} ${CURRENT_PROJECT}_compile_shaders)
 
+target_include_directories(${CURRENT_PROJECT} PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ..  # adds practicum/ to the include path
+)
 
-function(copy_files SOURCE EXTENSION)
-    message(STATUS "Copying from \"${SOURCE}\" directory with \"${EXTENSION}\" extension")
-    file(GLOB_RECURSE FILES RELATIVE ${CMAKE_SOURCE_DIR}/${SOURCE} ${CMAKE_SOURCE_DIR}/${SOURCE}/*.${EXTENSION})
-    set(_FILE_NUMBER 0)
-    set(_DIR_NUMBER 0)
-    message(STATUS "List of Copied Files (and created necessary directories):")
-    foreach(FILE ${FILES})
-        set(SOURCE_FILE ${CMAKE_SOURCE_DIR}/${SOURCE}/${FILE})
-        set(DEST_FILE ${CMAKE_BINARY_DIR}/${SOURCE}/${FILE})
-        get_filename_component(DIR ${DEST_FILE} DIRECTORY)
-        if(NOT EXISTS ${DIR})
-            math(EXPR _DIR_NUMBER "${_DIR_NUMBER}+1")
-            message(STATUS "${_DIR_NUMBER}. Making \"${DIR}\" directory")
-            file(MAKE_DIRECTORY ${DIR})
-        endif()
-        # if(NOT EXISTS ${DEST_FILE})
-            math(EXPR _FILE_NUMBER "${_FILE_NUMBER}+1")
-            message(STATUS "${_FILE_NUMBER}. Copying \"${SOURCE}/${FILE}\" file")
-            configure_file(${SOURCE_FILE} ${DEST_FILE} COPYONLY)
-        # endif()
-    endforeach()
-
-endfunction()
-
-copy_files(shaders glsl)
-
-include_directories(${CMAKE_SOURCE_DIR}/src)
-file(GLOB_RECURSE SRCS ${CMAKE_SOURCE_DIR}/src/*.cpp)
-
-add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
-
+target_link_libraries(${CURRENT_PROJECT} m SOIL assimp)
 if(UNIX AND NOT APPLE)
     message(STATUS "Linux platform")
-    find_package(Freetype REQUIRED)
-    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${FREETYPE_INCLUDE_DIRS})
-    target_link_libraries(${CMAKE_PROJECT_NAME} m glfw GLEW GL ${FREETYPE_LIBRARIES} SOIL assimp)
+    target_link_libraries(${CURRENT_PROJECT} glfw GLEW GL)
 elseif(WIN32)
     message(STATUS "Windows platform")
-    target_link_libraries(${CMAKE_PROJECT_NAME} m glu32 opengl32 glfw3 glew32 SOIL assimp)
+    target_link_libraries(${CURRENT_PROJECT} glu32 opengl32 glfw3 glew32)
 else()
     message(SEND_ERROR "The project supports only Linux and Windows platforms")
 endif()
